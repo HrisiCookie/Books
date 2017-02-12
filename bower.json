@@ -3,10 +3,10 @@
   "description": "##  Login form * Register users * Login users * Log out users * Each user has:   * Username, Password",
   "main": "index.js",
   "authors": [
-    "Nikolay <nikolayprodanow@gmail.com>"
+    "Hristina Bailova <hristina.bailova@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/HrisiCookie/Team-Robin",
+  "homepage": "https://github.com/HrisiCookie/Books",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,12 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.1",
-    "bootstrap": "^3.3.7",
-    "crypto-js": "^3.1.6",
     "sammy": "^0.7.6",
-    "toastr": "^2.1.3",
-    "mocha": "^3.1.0",
-    "chai": "^3.5.0"
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7"
   }
 }
