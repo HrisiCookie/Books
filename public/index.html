@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"
 </head>
 <body>
+    <div id="content"></div>
     
-    <script src="./bower_components/jquery/dist/jquery.js"></script>
-    <script src="./bower_components/sammy/lib/sammy.js"></script>
-    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- Libs -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/crypto-js/sha1.js"></script>
 
+    <!-- App: Models -->
+    <script src="js/models/user-model.js"></script>
+
+    <!-- App: Controllers -->
+    <script src="js/controllers/users-controller.js"></script>
+
+    <!-- App: setup -->
+    <script src="js/app.js"></script>
+    <script src="js/requester.js"></script>
+    <script src="js/templates.js"></script>
 </body>
 </html>
