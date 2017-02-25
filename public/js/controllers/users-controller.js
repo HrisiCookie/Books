@@ -20,7 +20,27 @@ var usersController = function() {
             });
     }
 
+    function login(context) {
+        templates.get('login')
+            .then(function(template) {
+                context.$element().html(template());
+
+                $('#btn-login').on('click', () => {
+                    let user = {
+                        username: $('#tb-username').val(),
+                        password: $('#tb-password').val()
+                    };
+                    
+                    userModel.login(user)
+                        .then(() => {
+                            console.log('User logged in!')
+                        });
+                });
+            });
+    }
+
     return {
-        register: register
+        register: register,
+        login: login
     };
 }();
