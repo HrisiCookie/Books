@@ -6,6 +6,18 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="navbar-collapse collapse">
+                <ul>
+                    <!--<li class="nav"><a href="#/home">Home</li>-->
+                    <li class="nav"><a href="#/login">Sign in</a></li>
+                    <li class="nav"><a href="#/register">Sign up</a></li>
+                    <li class="nav"><a href="#/books?page=1&size=10">Books</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div id="content"></div>
     
     <!-- Libs -->
@@ -17,9 +29,11 @@
 
     <!-- App: Models -->
     <script src="js/models/user-model.js"></script>
+    <script src="js/models/books-model.js"></script>
 
     <!-- App: Controllers -->
     <script src="js/controllers/users-controller.js"></script>
+    <script src="js/controllers/books-controller.js"></script>
 
     <!-- App: setup -->
     <script src="js/app.js"></script>
