@@ -18,6 +18,21 @@ class BooksModel {
         return promise;
 
     }
+
+    getSingleBook(bookId) {
+        let promise = new Promise((resolve, reject) => {
+            let url = `api/books/${bookId}`;
+
+            requester.get(url)
+                .then((res) => {
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+            });
+        });
+
+        return promise;
+    }
 }
 
 let booksModel = new BooksModel();

@@ -57,7 +57,16 @@ var booksController = function() {
         });
     }
 
+    function getSingleBook(context) {
+        templates.get('single-book')
+            .then(function(template) {
+                context.$element().html(template());
+            });
+        // booksModel.getSingleBook(context.params.id)
+    }
+
     return {
-        getBooks: getBooks
+        getBooks: getBooks,
+        getSingleBook: getSingleBook
     }
 }();
