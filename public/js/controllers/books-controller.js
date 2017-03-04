@@ -58,11 +58,32 @@ var booksController = function() {
     }
 
     function getSingleBook(context) {
+        let book;
+
+        booksModel.getSingleBook(context.params.id)
+            .then((resBook) => {
+                let reviews = resBook.reviews;
+
+                reviews = reviews.map((review) => {
+                    let nickName;
+                    userModel.getNickNameByID(review.userId)
+                        .then((resNickName) => {
+                            nickName = resNickName;
+                            review.nickName = nickName;
+                        });
+
+                book = resBook;
+
+                return book;
+
+                });
+
         templates.get('single-book')
-            .then(function(template) {
-                context.$element().html(template());
+                    .then(function(template) {
+                        context.$element().html(template(book));
+                    });
+
             });
-        // booksModel.getSingleBook(context.params.id)
     }
 
     return {

@@ -54,6 +54,15 @@ class UserModel {
         return promise;    
     }
 
+    getNickNameByID(userId) {
+        return Promise.resolve()
+            .then(() => {
+                let users = JSON.parse(localStorage.getItem(STORAGE_USERNAMES_AND_ID));
+                
+                return users[userId];
+            });
+    }
+
 }
 
 let userModel = new UserModel();

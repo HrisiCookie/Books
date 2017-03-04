@@ -1,1 +1,17 @@
 <h1>Single Book</h1>
+
+<div>
+    <img class="img-responsive img-thumbnail" src="{{coverUrl}}">
+    <a href="#"><h3>{{title}}</h3></a>
+</div>
+<div>
+    <h2>Reviews:</h2>
+    {{#if reviews}}
+    {{#reviews}}
+        <a href="#">{{this.nickName}}:</a>
+        <p>{{this.review}}</p>
+    {{/reviews}}
+    {{else}}
+        <p>Yours will be the first.</p>
+    {{/if}}
+</div>
