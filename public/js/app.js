@@ -10,6 +10,8 @@
 
         this.get('#/login', usersController.login);
 
+        this.get('#/logout', usersController.logout);
+
         this.get('#/books', booksController.getBooks);
 
         this.get('#/books/:id', booksController.getSingleBook);

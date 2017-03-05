@@ -54,6 +54,16 @@ class UserModel {
         return promise;    
     }
 
+    logout() {
+        let promise = new Promise((resolve, reject) => {
+            localStorage.removeItem(STORAGE_AUTH_KEY);
+            localStorage.removeItem(STORAGE_USERNAME);
+            resolve()
+        });
+
+        return promise;
+    }
+
     getNickNameByID(userId) {
         return Promise.resolve()
             .then(() => {

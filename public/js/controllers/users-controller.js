@@ -32,15 +32,23 @@ var usersController = function() {
                     };
                     
                     userModel.login(user)
-                        .then(() => {
-                            console.log('User logged in!')
+                        .then((res) => {
+                            console.log('User logged in!');
                         });
                 });
             });
     }
 
+    function logout(context) {
+        userModel.logout()
+            .then(() => {
+                console.log('User logged out!')
+            });
+    }
+
     return {
         register: register,
-        login: login
+        login: login,
+        logout: logout
     };
 }();
