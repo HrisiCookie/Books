@@ -13,8 +13,11 @@ var usersController = function() {
                     };
 
                     userModel.register(user)
-                        .then(() => {
+                        .then((res) => {
+                            notificator.success(`${res.username} signed up successfully!`);
                             console.log('User registred!');
+                        }, (err) => {
+                            notificator.error(JSON.parse(err).err);
                         });
                 });
             });
@@ -33,7 +36,11 @@ var usersController = function() {
                     
                     userModel.login(user)
                         .then((res) => {
+                            notificator.success(`${res.username} signed in!`);
                             console.log('User logged in!');
+                        }, 
+                        function (err) {
+                            notificator.error('Invalid username or password!');
                         });
                 });
             });
@@ -42,6 +49,7 @@ var usersController = function() {
     function logout(context) {
         userModel.logout()
             .then(() => {
+                notificator.success('User signed out!');
                 console.log('User logged out!')
             });
     }
