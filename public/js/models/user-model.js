@@ -64,6 +64,10 @@ class UserModel {
         return promise;
     }
 
+    isLoggedIn() {
+        return !!localStorage.getItem(STORAGE_AUTH_KEY);
+    }
+
     getNickNameByID(userId) {
         return Promise.resolve()
             .then(() => {

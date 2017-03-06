@@ -2,16 +2,24 @@
 
 <div>
     <img class="img-responsive img-thumbnail" src="{{coverUrl}}">
-    <a href="#"><h3>{{title}}</h3></a>
+    <h3 id="title" data-id = {{_id}}>{{title}}</h3>
+    <h3>Author: {{author}}</h3>
+    <p>Genres: </p>
+    <p>Pages: {{pages}}</p>
+    <p>Description: {{description}}</p>
 </div>
 <div>
     <h2>Reviews:</h2>
     {{#if reviews}}
     {{#reviews}}
-        <a href="#">{{this.nickName}}:</a>
+        <a href="#">{{this.username}}:</a>
         <p>{{this.review}}</p>
     {{/reviews}}
     {{else}}
         <p>Yours will be the first.</p>
     {{/if}}
+</div>
+<div class="form-group">
+    <textarea id="tb-review" type="text" class="form-control"></textarea>
+    <button id="btn-review-send" class="btn btn-primary">Send</button>
 </div>

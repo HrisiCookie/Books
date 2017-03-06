@@ -81,6 +81,19 @@ var booksController = function() {
         templates.get('single-book')
                     .then(function(template) {
                         context.$element().html(template(book));
+
+                        $('#btn-review-send').on('click', function() {
+                            let bookId = $('#title').attr('data-id');
+                            let review = $('#tb-review').val();
+
+                            booksModel.addReview(bookId, review)
+                                .then(() => {
+                                    notificator.success(`${user.username} added review!`);
+                                    location.reload();
+                                }, (err) => {
+                                    notificator.error(err);
+                                });
+                        });
                     });
 
             });
