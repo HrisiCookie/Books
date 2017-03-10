@@ -58,7 +58,7 @@ var booksController = function() {
     }
 
     function getSingleBook(context) {
-        let book;
+        let book, isLoggedIn;
 
         booksModel.getSingleBook(context.params.id)
             .then((resBook) => {
@@ -94,13 +94,56 @@ var booksController = function() {
                                     notificator.error(err);
                                 });
                         });
+
+                        $('.change-status').on('click', '.btn-change-status', function() {
+                            let status = $(this).attr('data-status');
+                            let bookId = $('#title').attr('data-id');
+
+                            // console.log(status);
+                            // console.log(bookId);
+
+                            booksModel.changeStatus(bookId, status)
+                                .then(() => {
+                                    notificator.success('Status changed!');
+                                    location.reload();
+                                }, (err) => {
+                                    notificator.error(err);
+                                });
+                        });
                     });
 
             });
     }
 
+    function myBooks(context) {
+         booksModel.getMyBooks()
+            .then((books) => {
+                let coveredBooks = books.map((book) => {
+                    let coverAsNumber = parseInt(book.coverUrl);
+                    if (!book.coverUrl) {
+                        book.coverUrl = DEFAULT_BOOK_COVER_URL;
+                    }
+
+                    return book;
+                    });
+
+                    let data = {
+                        books
+                    };
+
+                    templates.get('my-books')
+                        .then(function(template) {
+                            context.$element().html(template(data));
+                        });
+            });
+    }
+
+
+
+
     return {
         getBooks: getBooks,
-        getSingleBook: getSingleBook
+        getSingleBook: getSingleBook,
+        myBooks: myBooks
     }
 }();

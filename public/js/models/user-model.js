@@ -45,7 +45,8 @@ class UserModel {
             requester.putJSON(url, body)
                 .then(function(res) {
                     localStorage.setItem(STORAGE_AUTH_KEY, res.authKey),
-                    localStorage.setItem(STORAGE_USERNAME, res.username)
+                    localStorage.setItem(STORAGE_USERNAME, res.username);
+                    resolve(res);
                 }, function(err) {
                     reject(err.responseText)
                 });
@@ -65,7 +66,20 @@ class UserModel {
     }
 
     isLoggedIn() {
-        return !!localStorage.getItem(STORAGE_AUTH_KEY);
+        return Promise.resolve()
+            .then(() => {
+                return !!localStorage.getItem(STORAGE_AUTH_KEY);
+            });
+    }
+
+    getLoggedHeader() {
+        return Promise.resolve()
+            .then(() => {
+                let a = localStorage.getItem(STORAGE_AUTH_KEY);
+                return {
+                    'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)
+                };
+            });
     }
 
     getNickNameByID(userId) {

@@ -39,23 +39,99 @@ class BooksModel {
         let promise = new Promise((resolve, reject) => {
             let url = 'api/mybooks/review';
 
-            let options = {
-                headers: {
-                    'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)
-                }
-            };
+            // let options = {
+            //     headers: {
+            //         'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)
+            //     }
+            // };
 
             let body = {
                 bookId,
                 review
             };
 
-            requester.putJSON(url, body, options)
+            // requester.putJSON(url, body, options)
+            //     .then((res) => {
+            //         resolve(res);
+            //     }, (err) => {
+            //         reject(err);
+            //     });
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.putJSON(url, body, options);
+                })
                 .then((res) => {
                     resolve(res);
                 }, (err) => {
                     reject(err);
                 });
+        });
+
+        return promise;
+    }
+
+    changeStatus(bookId, status) {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/mybooks';
+
+            // let options = {
+            //     headers: {
+            //         'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)
+            //     }
+            // };
+
+            let body = {
+                bookId: bookId,
+                bookStatus: status
+            };
+
+            // requester.putJSON(url, body, options)
+            //     .then((res) => {
+            //         resolve(res);
+            //     }, (err) => {
+            //         reject(err);
+            //     });
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.putJSON(url, body, options);
+                })
+                .then((res) => {
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+                });
+        });
+
+        return promise;
+    }
+
+    getMyBooks() {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/mybooks/all';
+
+            // let options = {
+            //     headers: {
+            //         'x-auth-key': localStorage.getItem(STORAGE_AUTH_KEY)
+            //     }
+            // };
+
+            // requester.get(url, options)
+            //     .then((res) => {
+            //         resolve(res);
+            //     }, (err) => {
+            //         reject(err);
+            //     });
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.getJSON(url, options)
+                })
+                .then(resolve, reject);
         });
 
         return promise;

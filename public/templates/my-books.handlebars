@@ -1,0 +1,14 @@
+<h1>My books</h1>   
+
+<div>
+    {{#books}}
+        <div>
+            <img class="img-responsive img-thumbnail" src="{{coverUrl}}">
+        </div>
+        <div>
+            <a href="#/books/{{_id}}"><h3>{{{title}}}</h3></a>
+            <a href="#"><h4>Author: {{author}}</h4></a>
+            <h4>Pages: {{pages}}</h4>
+        </div>
+    {{/books}}
+</div>

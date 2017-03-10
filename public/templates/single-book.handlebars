@@ -8,6 +8,12 @@
     <p>Pages: {{pages}}</p>
     <p>Description: {{description}}</p>
 </div>
+<div class="change-status">
+    <h3>Status</h3>
+    <button type="radio" data-status="want-to-read" class="btn btn-success btn-change-status">Want to read</button>
+    <button type="radio" data-status="currently-reading" class="btn btn-success btn-change-status">Currently reading</button>
+    <button type="radio" data-status="read" class=" btn btn-success btn-change-status">Read</button>
+</div>
 <div>
     <h2>Reviews:</h2>
     {{#if reviews}}
