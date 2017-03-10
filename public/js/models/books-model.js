@@ -137,6 +137,36 @@ class BooksModel {
         return promise;
     }
 
+    addNewBook(bookToAdd) {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/books';
+            let headers;
+            let body = {
+                data: bookToAdd
+            }
+
+            userModel.getLoggedHeader()
+                .then((resHeader) => {
+                    headers = resHeader;
+                })
+                .then(() => {
+                    let options = {headers};
+
+                    return requester.postJSON(url, body, options);
+                })
+                .then((res) => {
+                    let books = JSON.parse(localStorage.getItem(BOOKS_STORAGE));
+                    books.push(res);
+                    localStorage.setItem(BOOKS_STORAGE, JSON.stringify(books));
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+                });
+        });
+
+        return promise;
+    }
+
 }
 
 let booksModel = new BooksModel();

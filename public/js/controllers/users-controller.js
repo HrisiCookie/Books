@@ -16,6 +16,8 @@ var usersController = function() {
                         .then((res) => {
                             notificator.success(`${res.username} signed up successfully!`);
                             console.log('User registred!');
+                            $('#tb-username').val('');
+                            $('#tb-password').val('');
                         }, (err) => {
                             notificator.error(JSON.parse(err).err);
                         });
@@ -38,6 +40,8 @@ var usersController = function() {
                         .then((res) => {
                             notificator.success(`${res.username} signed in!`);
                             console.log('User logged in!');
+                            $('#tb-username').val('');
+                            $('#tb-password').val('');
                         }, 
                         function (err) {
                             notificator.error('Invalid username or password!');

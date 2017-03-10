@@ -138,12 +138,51 @@ var booksController = function() {
             });
     }
 
+    function newBook(context) {
+        templates.get('add-new-book')
+            .then(function(template) {
+                context.$element().html(template());
+
+                $('#btn-add-book').on('click', function() {
+                    let title = $('#tb-title').val();
+                    let author = $('#tb-author').val();
+                    let description = $('#tb-description').val();
+                    let pages = $('#tb-pages').val();
+                    let cover = $('#tb-cover').val() || DEFAULT_BOOK_COVER_URL;
+                    let genres = $('#tb-genres').val().split(', ');
+
+                    let bookToAdd = {
+                        title,
+                        author,
+                        description,
+                        pages,
+                        cover,
+                        genres
+                    };
+
+                    booksModel.addNewBook(bookToAdd)
+                        .then((res) => {
+                            notificator.success('Added new book!');
+                            $('#tb-title').val('');
+                            $('#tb-author').val('');
+                            $('#tb-description').val('');
+                            $('#tb-pages').val('');
+                            $('#tb-cover').val('');
+                            $('#tb-genres').val('');
+                        }, (err) => {
+                            notificator.error(err);
+                        });
+                });
+            });
+    }
+
 
 
 
     return {
         getBooks: getBooks,
         getSingleBook: getSingleBook,
-        myBooks: myBooks
+        myBooks: myBooks,
+        newBook: newBook
     }
 }();

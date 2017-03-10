@@ -17,6 +17,8 @@
         this.get('#/books/:id', booksController.getSingleBook);
 
         this.get('#/mybooks', booksController.myBooks);
+
+        this.get('#/add-new-book', booksController.newBook);
     });
 
     $(function() {
