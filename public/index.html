@@ -5,25 +5,31 @@
     <title>Books</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/toastr/toastr.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="navbar-collapse collapse">
-                <ul>
-                    <!--<li class="nav"><a href="#/home">Home</li>-->
-                    <li class="nav"><a href="#/login">Sign in</a></li>
-                    <li class="nav"><a href="#/register">Sign up</a></li>
-                    <li class="nav"><a href="#/books?page=1&size=10">Books</a></li>
-                    <li class="nav"><a href="#/mybooks">My books</a></li>
-                    <li class="nav"><a href="#/add-new-book">Add new book</a></li>
-                    <li class="nav"><a href="#/logout">Sign out</a></li>
+    <div id="page">
+        <header>
+            <nav class="navbar">
+                <div class="navbar-header">
+                    <img class="navbar-logo" src="./images/logo.jpg">
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li class="nav"><a href="#/home">Home</li>-->
+                        <li class="nav"><a href="#/login">Sign in</a></li>
+                        <li class="nav"><a href="#/register">Sign up</a></li>
+                        <li class="nav"><a href="#/books?page=1&size=10">Books</a></li>
+                        <li class="nav"><a href="#/mybooks">My books</a></li>
+                        <li class="nav"><a href="#/add-new-book">Add new book</a></li>
+                        <li class="nav"><a href="#/logout">Sign out</a></li>
 
-                </ul>
-            </div>
-        </nav>
+                    </ul>
+                </div>
+            </nav>
     </header>
     <div id="content"></div>
+    </div>
     
     <!-- Libs -->
     <script src="bower_components/jquery/dist/jquery.js"></script>

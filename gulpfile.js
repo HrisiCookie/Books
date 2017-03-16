@@ -1,3 +1,5 @@
+'use strict'
+
 const gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     clean = require('gulp-clean');
@@ -28,7 +30,9 @@ gulp.task('lint:js', () => {
 gulp.task('lint', ['lint:js']);
 
 //compile
-const babel = require('gulp-babel');
+const babel = require('gulp-babel'),
+    sass = require('gulp-sass');
+    // watchSass = require('gulp-watch-sass');
 
 gulp.task('compile:js', () => {
     return gulp.src('public/js/**/*.js')
@@ -37,6 +41,29 @@ gulp.task('compile:js', () => {
         }))
         .pipe(gulp.dest('build'));
 });
+
+// gulp.task('sass', () => gulp.src([
+//     'public/styles/sass/**/*.{sass, scss}',
+//     '!public/libs/**/*'
+// ])
+//     .pipe(sass().on('error', sass.logError))
+//     .pipe(gulp.dest('./css')));
+
+// gulp.task('watch', () => {
+//     gulp.watch('./sass/**/*.scss', ['sass'])
+// });
+
+gulp.task('sass', () => {
+    return gulp.src(['public/styles/sass/**/*.scss', '!public/libs/**/*'])
+        .pipe(sass())
+        .pipe(gulp.dest('public/styles/css'))
+});
+
+gulp.task('watch', () => {
+    gulp.watch('public/styles/sass/**/*.scss', ['sass']);
+});
+
+gulp.task('compile:sass', ['sass', 'watch']);
 
 gulp.task('compile', gulpsync.sync(['compile:js']));
 
