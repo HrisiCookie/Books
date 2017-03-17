@@ -42,17 +42,6 @@ gulp.task('compile:js', () => {
         .pipe(gulp.dest('build'));
 });
 
-// gulp.task('sass', () => gulp.src([
-//     'public/styles/sass/**/*.{sass, scss}',
-//     '!public/libs/**/*'
-// ])
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest('./css')));
-
-// gulp.task('watch', () => {
-//     gulp.watch('./sass/**/*.scss', ['sass'])
-// });
-
 gulp.task('sass', () => {
     return gulp.src(['public/styles/sass/**/*.scss', '!public/libs/**/*'])
         .pipe(sass())
