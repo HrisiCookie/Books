@@ -2,29 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Books</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/toastr/toastr.css">
     <link rel="stylesheet" href="./styles/css/main.css">
+    <link rel="stylesheet" href="./styles/css/home.css">
 </head>
 <body>
     <div id="page">
         <header>
-            <nav class="navbar">
-                <div class="navbar-header">
-                    <img class="navbar-logo" src="./images/logo.jpg">
+            <!--<div class="navbar-top">
+                <div class="nav-search inner-addon right-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                    <input type="text" placeholder="Search for books..." />
                 </div>
-                <div class="navbar-collapse collapse">
+            </div>
+            <nav class="navbar navbar-toggleable-xs">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseElements" aria-controls="navbarToggleExternalContent" aria-expanded="false"><span class="navbar-toggler-icon"></span></button>
+                <div>
+                    <img class="" src="./images/logo.jpg">
+                </div>
+                <div class="collapse navbar-collapse" id="collapseElements">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav"><a href="#/home">Home</li>
-                        <li class="nav"><a href="#/login">Sign in</a></li>
-                        <li class="nav"><a href="#/register">Sign up</a></li>
-                        <li class="nav"><a href="#/books?page=1&size=10">Books</a></li>
-                        <li class="nav"><a href="#/mybooks">My books</a></li>
-                        <li class="nav"><a href="#/add-new-book">Add new book</a></li>
-                        <li class="nav"><a href="#/logout">Sign out</a></li>
-
+                    <div  class="collapse navbar-toggleable-xs">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#/home">Home</a></li>
+                        <li class="nav-item"><a href="#/login">Sign in</a></li>
+                        <li class="nav-item"><a href="#/register">Sign up</a></li>
+                        <li class="nav-item"><a href="#/books?page=1&size=10">Books</a></li>
+                        <li class="nav-item"><a href="#/mybooks">My books</a></li>
+                        <li class="nav-item"><a href="#/add-new-book">Add new book</a></li>
+                        <li class="nav-item"><a href="#/logout">Sign out</a></li>
                     </ul>
+                    </div>
+                </div>
+            </nav>-->
+
+            <!--<nav class="navbar navbar-toggleable-xs navbar-light bg-faded">
+                <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseElements">
+                         <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                    <div>
+                        <img class="" src="./images/logo.jpg">
+                    </div>
+                    <div class="collapse navbar-toggleable-xs" id="collapseElements">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"><a href="#/home">Home</a></li>
+                            <li class="nav-item"><a href="#/login">Sign in</a></li>
+                            <li class="nav-item"><a href="#/register">Sign up</a></li>
+                            <li class="nav-item"><a href="#/books?page=1&size=10">Books</a></li>
+                            <li class="nav-item"><a href="#/mybooks">My books</a></li>
+                            <li class="nav-item"><a href="#/add-new-book">Add new book</a></li>
+                            <li class="nav-item"><a href="#/logout">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>-->
+
+            <nav class="navbar navbar-toggleable-md navbar-light">
+                <div class="row">
+                    <div class="col-9 navbar-logo"
+                        <a href="#/home"><img class="img-fluid" src="./images/logo.jpg"></a>
+                    </div>
+                    <div class="col-3">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 position-right">
+                    <li class="nav-item active text-justify">
+                        <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#/login">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/register">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/books?page=1&size=10">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/add-new-book">Add new book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/logout">Sign Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/mybooks">My books</a>
+                    </li>
+                    </ul>
+                    </form>
                 </div>
             </nav>
     </header>
@@ -33,8 +108,10 @@
     
     <!-- Libs -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/tether/dist/js/tether.js"></script>
     <script src="bower_components/sammy/lib/sammy.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!--/*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>*/-->
     <script src="bower_components/handlebars/handlebars.js"></script>
     <script src="bower_components/crypto-js/crypto-js.js"></script>
     <script src="bower_components/toastr/toastr.js"></script>

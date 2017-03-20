@@ -1,0 +1,60 @@
+// @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+$primary-color: #f4f4f4;
+$page-color: #ffffff;
+
+
+body {
+    background-color: $primary-color;
+}
+
+#page {
+    background-color: $page-color;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* search-box */
+.nav-search {
+    float: right
+}
+.inner-addon {
+    position: relative;
+
+    .glyphicon {
+        position: absolute;
+        padding: 5px 10px;
+    }
+}
+
+.right-addon {
+    .glyphicon {
+        right: 0px;
+    }
+}
+
+/* navbar */
+.navbar-logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
+}
+
+.position-right {
+    float: right;
+}
+header {
+    flex-direction: row;
+}
+
+// @media (min-width: 768px) and (max-width: 991px) { 
+//     #page {
+//         background-color: $page-color;
+//         margin-top: 50px;
+//         margin-bottom: 50px;
+//         margin-left: 100px;
+//         margin-right: 100px;
+//     }
+// }
