@@ -6,9 +6,12 @@
     <title>Books</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="bower_components/toastr/toastr.css">
     <link rel="stylesheet" href="./styles/css/main.css">
     <link rel="stylesheet" href="./styles/css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Kreon:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="page">
@@ -63,10 +66,30 @@
                     </div>
                 </div>
             </nav>-->
-
+            
+            <!--<div class="navbar-top">
+                <div class="nav-search inner-addon right-addon">
+                    <!--<i class="fa fa-search" aria-hidden="true"></i>-->
+                    <!--<input type="text" placeholder="Search for books..." <i class="fa fa-search"></i> />
+                </div>
+            </div>-->
+            <div class="row d-flex justify-content-end">
+                <div class="navbar-top">
+                    <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <div class="nav-search inner-addon right-addon">
+                        <input type="text" placeholder="Search for books...">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+            </div>
             <nav class="navbar navbar-toggleable-md navbar-light">
                 <div class="row">
-                    <div class="col-9 navbar-logo"
+                    <div class="col-9 col-lg-8 col-md-3 col-sm-6 navbar-logo">
                         <a href="#/home"><img class="img-fluid" src="./images/logo.jpg"></a>
                     </div>
                     <div class="col-3">
@@ -75,37 +98,76 @@
                         </button>
                     </div>
                 </div>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 position-right">
-                    <li class="nav-item active text-justify">
-                        <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#/login">Sign In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/register">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/books?page=1&size=10">Books</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/add-new-book">Add new book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/logout">Sign Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/mybooks">My books</a>
-                    </li>
+                <div class="collapse navbar-collapse justify-content-md-end" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav">
+                        <li class="nav-item text-justify">
+                            <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/login">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/register">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/books?page=1&size=10">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/add-new-book">Add new book</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/logout">Sign Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#/mybooks">My books</a>
+                        </li>
                     </ul>
-                    </form>
                 </div>
             </nav>
     </header>
-    <div id="content"></div>
-    </div>
     
+    <div id="content"></div>
+
+     <footer>
+        <div class="container footer">
+            <div class="row justify-content-xs-center">
+                <div class="col-md-3 hidden-sm-down">
+                    <a href="#/home"><img class="img-fluid" src="./images/logo.jpg"></a>
+                    <p>Curabitur blandit rutrum pharetra. Donec dictum felis eu eros pretium vulputate. Etiam quis nulla ac turpis molestie tempus et in purus. Suspendisse potenti. Integer accumsan accumsan est, ac accumsan nunc sollicitudin id. </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Recently Added Books</h5>
+                    <ul class="reset-padding">
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 hidden-sm-down">
+                    <h5>Text Widget</h5>
+                    <p>Curabitur blandit rutrum pharetra. Donec dictum felis eu eros pretium vulputate. Etiam quis nulla ac turpis molestie tempus et in purus. Suspendisse potenti. Integer accumsan accumsan est, ac accumsan nunc sollicitudin id. </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Recent Reviews</h5>
+                    <ul class="reset-padding">
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                        <li><a href="#">Harry Potter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    </div>
+
+   
     <!-- Libs -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/tether/dist/js/tether.js"></script>

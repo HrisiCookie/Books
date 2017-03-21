@@ -1,9 +1,10 @@
 $home-header-border: #f4f4f4;
 $home-header-color: #929292;
+$carusel-img-height: 400px;
 
 .carousel-inner img {
     width: 100%;
-    max-height: 400px;
+    max-height: $carusel-img-height;
 }
 
 // @media (min-width: 576px) and (max-width: 767px) { 
@@ -31,5 +32,25 @@ $home-header-color: #929292;
         color: $home-header-color;
     }
 }
+
+#prev {
+    position: absolute;
+    top: $carusel-img-height / 2 - 30;
+    margin-left: -5px;
+}
+
+#next {
+    position: absolute;
+    top: $carusel-img-height / 2 - 30;
+    margin-left: 1185px;
+}
+
+
+@media screen and (max-width: 320px) {
+    .carousel-inner img {
+        max-height: $carusel-img-height / 2;
+    }
+}
+
 
 

@@ -1,5 +1,6 @@
 body {
-  background-color: #f4f4f4; }
+  background-color: #f4f4f4;
+  color: #ababab; }
 
 #page {
   background-color: #ffffff;
@@ -11,24 +12,103 @@ body {
 /* search-box */
 .nav-search {
   float: right; }
+  .nav-search input {
+    background-color: #f4f4f4;
+    font-style: italic;
+    font-size: 0.9em; }
 
 .inner-addon {
   position: relative; }
-  .inner-addon .glyphicon {
-    position: absolute;
-    padding: 5px 10px; }
+  .inner-addon .fa {
+    padding: 5px 10px;
+    background-color: white; }
 
-.right-addon .glyphicon {
+.right-addon .fa {
   right: 0px; }
 
 /* navbar */
+.navbar-top {
+  float: right;
+  margin-right: 20px; }
+
 .navbar-logo {
   margin-top: 20px;
   margin-left: 20px;
   float: left; }
 
-.position-right {
-  float: right; }
+.navbar-toggler {
+  border: none; }
 
-header {
-  flex-direction: row; }
+.social-icons {
+  float: left;
+  margin-right: 15px; }
+  .social-icons a {
+    margin-right: 5px;
+    color: #e3e3e3; }
+    .social-icons a:hover {
+      color: #75a0aa; }
+
+body {
+  font-family: 'Droid Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px; }
+
+h2, h5, .nav-item {
+  font-family: 'Kreon', serif;
+  font-style: normal;
+  font-weight: 300;
+  color: black; }
+
+a {
+  color: #ababab; }
+  a:hover {
+    color: blue;
+    text-decoration: none; }
+  a:active {
+    color: blue; }
+
+.reset-padding {
+  padding: 15px; }
+
+@media screen and (max-width: 320px) {
+  #page {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0; }
+  .navbar-logo {
+    width: 30%;
+    margin: 0 auto;
+    display: block; }
+  .nav-link {
+    text-align: center; }
+    .nav-link:active {
+      background: #efefef; } }
+
+@media (min-width: 375px) and (max-width: 599px) {
+  #page {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0; } }
+
+@media (min-width: 425px) and (max-width: 599px) {
+  #page {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #page {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    margin-left: 0.9em;
+    margin-right: 0.9em; } }
+
+.footer {
+  background-color: #f9f9f9;
+  padding-top: 30px;
+  padding-bottom: 30px; }

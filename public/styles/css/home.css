@@ -16,3 +16,17 @@
   border-bottom: 2px solid #f4f4f4; }
   .home-header h4 {
     color: #929292; }
+
+#prev {
+  position: absolute;
+  top: 170px;
+  margin-left: -5px; }
+
+#next {
+  position: absolute;
+  top: 170px;
+  margin-left: 1185px; }
+
+@media screen and (max-width: 320px) {
+  .carousel-inner img {
+    max-height: 200px; } }
