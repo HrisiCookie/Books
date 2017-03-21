@@ -30,3 +30,25 @@
 @media screen and (max-width: 320px) {
   .carousel-inner img {
     max-height: 200px; } }
+
+@media (min-width: 375px) and (max-width: 599px) {
+  .carousel-inner img {
+    max-height: 200px; } }
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  #next {
+    position: absolute;
+    top: 170px;
+    margin-left: 96.3%; } }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #next {
+    position: absolute;
+    top: 170px;
+    margin-left: 97.3%; } }
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  #next {
+    position: absolute;
+    top: 170px;
+    margin-left: 98.5%; } }
