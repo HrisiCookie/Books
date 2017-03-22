@@ -1,0 +1,58 @@
+@import 'colors';
+// $primary-color: #f4f4f4;
+// $page-color: #ffffff;
+// $footer-color: #f9f9f9;
+// $body-text-color: #ababab;
+// $header-color: black;
+// $social-icons-color: #e3e3e3;
+// $link-color-hover: #75a0aa;
+// $social-icons-color-hover: blue;
+// $background-hoder: #efefef;
+// $width: 100%;
+
+
+.header-all-books {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    border-top: 2px solid $home-header-border;
+    border-bottom: 2px solid $home-header-border;
+}
+
+.container-all-books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.img-size {
+    width: 300px;
+    height: 450px;
+}
+
+.container-title {
+    // display: flex;
+    // justify-content: center;
+}
+
+.container-book-title {
+    text-align: center;
+}
+
+.container-book-author {
+    text-align: center;
+}

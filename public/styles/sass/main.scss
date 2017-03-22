@@ -1,15 +1,15 @@
-// @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+@import 'colors';
 
-$primary-color: #f4f4f4;
-$page-color: #ffffff;
-$footer-color: #f9f9f9;
-$body-text-color: #ababab;
-$header-color: black;
-$social-icons-color: #e3e3e3;
-$link-color-hover: #75a0aa;
-$social-icons-color-hover: blue;
-$background-hoder: #efefef;
-$width: 100%;
+// $primary-color: #f4f4f4;
+// $page-color: #ffffff;
+// $footer-color: #f9f9f9;
+// $body-text-color: #ababab;
+// $header-color: black;
+// $social-icons-color: #e3e3e3;
+// $link-color-hover: #75a0aa;
+// $social-icons-color-hover: blue;
+// $background-hoder: #efefef;
+// $width: 100%;
 
 body {
     background-color: $primary-color;
@@ -66,14 +66,6 @@ body {
     border: none;
 }
 
-// .position-right {
-//      display: flex; 
-//     justify-content: flex-end;
-// }
-// header {
-//     flex-direction: row;
-// }
-
 .social-icons {
     float: left;
     margin-right: 15px;
@@ -87,17 +79,6 @@ body {
     }
 }
 
-
-// @media (min-width: 768px) and (max-width: 991px) { 
-//     #page {
-//         background-color: $page-color;
-//         margin-top: 50px;
-//         margin-bottom: 50px;
-//         margin-left: 100px;
-//         margin-right: 100px;
-//     }
-// }
-
 body {
     font-family: 'Droid Sans', sans-serif;
     font-style: normal;
@@ -105,7 +86,7 @@ body {
     font-size: 14px;
 }
 
-h2, h5, .nav-item {
+h1, h2, h5, .nav-item {
     font-family: 'Kreon', serif;
     font-style: normal;
     font-weight: 300;
@@ -139,14 +120,7 @@ a {
     padding: 15px;
 }
 
-// .navbar-gradient {
-// /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f8f8f8+1,f9f9f9+3,f7f7f7+4,f9f9f9+5,fcfcfc+13,ffffff+27,ffffff+99,cbcbcb+100 */
-// background: #ffffff; /* Old browsers */
-// background: -moz-linear-gradient(top, hsl(0,0%,100%) 0%, hsl(0,0%,97%) 1%, hsl(0,0%,98%) 3%, hsl(0,0%,97%) 4%, hsl(0,0%,98%) 5%, hsl(0,0%,99%) 13%, hsl(0,0%,100%) 27%, hsl(0,0%,100%) 99%, hsl(0,0%,80%) 100%); /* FF3.6-15 */
-// background: -webkit-linear-gradient(top, hsl(0,0%,100%) 0%,hsl(0,0%,97%) 1%,hsl(0,0%,98%) 3%,hsl(0,0%,97%) 4%,hsl(0,0%,98%) 5%,hsl(0,0%,99%) 13%,hsl(0,0%,100%) 27%,hsl(0,0%,100%) 99%,hsl(0,0%,80%) 100%); /* Chrome10-25,Safari5.1-6 */
-// background: linear-gradient(to bottom, hsl(0,0%,100%) 0%,hsl(0,0%,97%) 1%,hsl(0,0%,98%) 3%,hsl(0,0%,97%) 4%,hsl(0,0%,98%) 5%,hsl(0,0%,99%) 13%,hsl(0,0%,100%) 27%,hsl(0,0%,100%) 99%,hsl(0,0%,80%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cbcbcb',GradientType=0 ); /* IE6-9 */
-// }
+/* media queries */
 
 @media screen and (max-width: 320px) {
     #page {

@@ -1,6 +1,8 @@
-$home-header-border: #f4f4f4;
-$home-header-color: #929292;
-$carusel-img-height: 400px;
+@import 'colors';
+
+// $home-header-border: #f4f4f4;
+// $home-header-color: #929292;
+// $carusel-img-height: 400px;
 
 .carousel-inner img {
     width: 100%;
@@ -45,6 +47,7 @@ $carusel-img-height: 400px;
     margin-left: 1185px;
 }
 
+/* media queries */
 
 @media screen and (max-width: 320px) {
     .carousel-inner img {

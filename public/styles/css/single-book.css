@@ -1,0 +1,13 @@
+.content {
+  background: #fff;
+  margin: 0 auto;
+  width: 600px;
+  padding: 10px;
+  min-height: 300px; }
+
+.btn-read-more-less {
+  background-color: white;
+  border-radius: 5px;
+  padding: 8px 12px 8px 12px;
+  outline: 0;
+  box-shadow: 0; }

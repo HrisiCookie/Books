@@ -1,3 +1,5 @@
+/* variables */
+/* mixins */
 .carousel-inner img {
   width: 100%;
   max-height: 400px; }
@@ -27,6 +29,7 @@
   top: 170px;
   margin-left: 1185px; }
 
+/* media queries */
 @media screen and (max-width: 320px) {
   .carousel-inner img {
     max-height: 200px; } }

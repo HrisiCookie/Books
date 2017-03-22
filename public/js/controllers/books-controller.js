@@ -64,21 +64,20 @@ var booksController = function() {
             .then((resBook) => {
                 let reviews = resBook.reviews;
 
-                reviews = reviews.map((review) => {
-                    let nickName;
-                    userModel.getNickNameByID(review.userId)
-                        .then((resNickName) => {
-                            nickName = resNickName;
-                            review.nickName = nickName;
-                        });
+                // reviews = reviews.map((review) => {
+                //     let nickName;
+                //     userModel.getNickNameByID(review.userId)
+                //         .then((resNickName) => {
+                //             nickName = resNickName;
+                //             review.nickName = nickName;
+                //         });
 
                 book = resBook;
 
                 return book;
 
-                });
-
-        templates.get('single-book')
+                }).then(function(book) {
+                templates.get('single-book')
                     .then(function(template) {
                         context.$element().html(template(book));
 
@@ -101,7 +100,7 @@ var booksController = function() {
 
                             // console.log(status);
                             // console.log(bookId);
-
+                            
                             booksModel.changeStatus(bookId, status)
                                 .then(() => {
                                     notificator.success('Status changed!');
@@ -110,10 +109,36 @@ var booksController = function() {
                                     notificator.error(err);
                                 });
                         });
-                    });
 
-            });
-    }
+                        $(document).ready(function() {
+                            var readMoreHtml = $('.read-more').html();
+                            var lessText = readMoreHtml.substr(0, 800);
+
+                            if (readMoreHtml.length > 800) {
+                                $('.read-more').html(lessText).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            } else {
+                                $('.read-more').html(readMoreHtml);
+                            }
+                            
+                            console.log('here');
+
+                            $('body').on('click', '.read-more-link', function(event){
+                                event.preventDefault();
+                                $(this).parent('.read-more').html(readMoreHtml).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
+                            });
+
+                             $('body').on('click', '.show-less-link', function(event){
+                                event.preventDefault();                                 
+                                $(this).parent('.read-more').html(readMoreHtml.substr(0, 800)).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            });
+                        });
+                    });
+                });
+
+
+
+            // });
+    }   
 
     function myBooks(context) {
          booksModel.getMyBooks()
