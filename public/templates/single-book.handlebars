@@ -17,8 +17,9 @@
         <p>Posted by <span>Admin</span> on March 13, 2011 | {{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</p>
     </div>
     {{!--<div class="col-md-8">--}}
-    <div>
-        <div class="row">
+    <div class="row">
+    <div class="container-book-info">
+        {{!--<div class="row">
             <div class="">
                 <div class="media offset-md-1 container-book-info">
                     <div class="container-media">
@@ -40,7 +41,24 @@
                     </div>
                 </div>
             </div>
+        </div>--}}
+        <div class="col-md-4">
+            <img class="img-fluid img-border" src="{{coverUrl}}">
+            <div class="dropdown change-status">
+                <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Change status<span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
+                    <button data-status="currently-reading" class="dropdown-item" type="button">Currently reading</button>
+                    <button data-status="read" class="dropdown-item" type="button">Read</button>
+                </div>
+            </div>
         </div>
+        <div class="col-md-8">
+            <p class="read-more">{{description}}</p>
+        </div>
+    </div>
         {{!--<p>Genres: </p>
             {{#genres}}
                 <p>{{this}}</p>

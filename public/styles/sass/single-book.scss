@@ -136,8 +136,17 @@ aside {
 }
 
 .img-border {
-    padding: 10px;
+    padding: 5px;
     border: 2px solid $border-image;
+}
+
+.container-book-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 60px;
+    padding-right: 40px;
 }
 
 /* media queries */

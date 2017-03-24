@@ -107,8 +107,16 @@ aside {
   height: 100px; }
 
 .img-border {
-  padding: 10px;
+  padding: 5px;
   border: 2px solid #e1e1e1; }
+
+.container-book-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 60px;
+  padding-right: 40px; }
 
 /* media queries */
 @media (min-width: 375px) and (max-width: 599px) {
