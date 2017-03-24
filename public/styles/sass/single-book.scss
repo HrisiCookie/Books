@@ -1,44 +1,167 @@
-// .description-overflow {
-//      overflow: hidden;
-//   display: -webkit-box;
-//   -webkit-line-clamp: 3;
-//   -webkit-box-orient: vertical;
-// }
-
-// .sidebar-box {
-//   max-height: 20px;
-//   position: relative;
-//   overflow: hidden;
-// }
-// .sidebar-box .read-more { 
-//   position: absolute; 
-//   bottom: 0; 
-//   left: 0;
-//   width: 100%; 
-//   text-align: center; 
-//   margin: 0; padding: 30px 0; 
-	
-//   /* "transparent" only works here because == rgba(0,0,0,0) */
-//   background-image: linear-gradient(to bottom, transparent, black);
-// }
+@import 'colors';
 
 .content {
     background: #fff;
     margin: 0 auto;
-    width: 600px;
+    // width: 600px;
     padding: 10px;
-    min-height: 300px;
+    // min-height: 300px;
+    // justify-content: flex-end;
 }
 
-.btn-read-more-less {
+.btn-def {
     background-color: white;
+    // margin-top: 25px;
     border-radius: 5px;
     padding: 8px 12px 8px 12px;
     outline: 0;
     box-shadow: 0;
 }
 
+.btn-read-more-less {
+    @extend .btn-def;
+    float: right;
+}
+
+.breadcrumb {
+    background-color: white;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.book-post-info {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-left: 60px;
+    margin-right: 50px;
+    border-top: 2px solid $home-header-border;
+    border-bottom: 2px solid $home-header-border;
+    p {
+        margin: 0;
+        padding: 5px;
+    }
+    span {
+        color: black;
+    }
+}
 // .img-single-book {
 //    width: 50px;
 //    height: 50px;
-// }
+// }px;
+
+.btn-change-status {
+    @extend .btn-def;
+    // margin-left: 50px;
+    // background-color: $social-icons-color-hover;
+    &:hover {
+        background-color: $social-icons-color-hover;
+    }
+}
+
+.btn-send-review {
+    @extend .btn-read-more-less;
+    align-items: flex-end;
+}
+
+.container-media {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.change-status {
+    // justify-content: center;
+    display: flex;
+    flex-direction: column;
+   align-content: center;
+   margin-top: 5px; 
+}
+
+aside {
+    margin-top: 60px;
+}
+
+.container-reviews, .container-new-review {
+    margin-top: 60px;
+    margin-left: 60px;
+    h2 {
+        margin-bottom: 30px;
+    }
+}
+
+.grad {
+    background: #f9f9f9; /* Old browsers */
+    background: -moz-linear-gradient(top, hsl(0,0%,98%) 0%, hsl(0,0%,100%) 17%, hsl(0,0%,100%) 82%, hsl(0,0%,98%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, hsl(0,0%,98%) 0%,hsl(0,0%,100%) 17%,hsl(0,0%,100%) 82%,hsl(0,0%,98%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, hsl(0,0%,98%) 0%,hsl(0,0%,100%) 17%,hsl(0,0%,100%) 82%,hsl(0,0%,98%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+}
+
+.talk-bubble {
+    border: 2px solid $home-header-border;
+	margin-bottom: 50px;
+  display: inline-block;
+  position: relative;
+	width: 100%;
+	height: auto;
+	// background-color: lightyellow;
+}
+
+.tri-right.border.btm-right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 75px;
+	bottom: -40px;
+	border: 20px solid;
+	border-color: $home-header-border $home-header-border transparent transparent;
+}
+.tri-right.btm-right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+  left: auto;
+	right: 80px;
+	bottom: -32px;
+	border: 30px solid;
+	border-color: $gradient-start $gradient-start transparent transparent;
+}
+
+.img-review {
+    width: 100px;
+    height: 100px;
+}
+
+.img-border {
+    padding: 10px;
+    border: 2px solid $border-image;
+}
+
+/* media queries */
+@media (min-width: 375px) and (max-width: 599px) {
+    .container-book-info {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 599px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+}

@@ -33,6 +33,9 @@ body {
   float: right;
   margin-right: 20px; }
 
+.nav-item {
+  text-transform: uppercase; }
+
 .navbar-logo {
   margin-top: 20px;
   margin-left: 20px;
@@ -65,10 +68,10 @@ h1, h2, h5, .nav-item {
 a {
   color: #ababab; }
   a:hover {
-    color: blue;
+    color: #75a0aa;
     text-decoration: none; }
   a:active {
-    color: blue; }
+    color: #75a0aa; }
 
 .nav-link {
   font-size: 1.3em; }

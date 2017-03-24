@@ -56,6 +56,10 @@ body {
     // margin-left: 430px;
 }
 
+.nav-item {
+    text-transform: uppercase;
+}
+
 .navbar-logo {
     margin-top: 20px;
     margin-left: 20px;
@@ -203,8 +207,6 @@ a {
         }
     }
 }
-
-@media (max-width: 1199px) {}
 
 @media (min-width: 992px) and (max-width: 1024px) {
     #page {

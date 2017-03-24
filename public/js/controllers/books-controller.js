@@ -94,12 +94,17 @@ var booksController = function() {
                                 });
                         });
 
-                        $('.change-status').on('click', '.btn-change-status', function() {
+                        $('.change-status').on('click', '.dropdown-item', function() {
                             let status = $(this).attr('data-status');
                             let bookId = $('#title').attr('data-id');
 
                             // console.log(status);
                             // console.log(bookId);
+
+                        $('.change-status').on('click', '.dropdown-item', function(){
+                            var selText = $(this).text();
+                            $(this).parents('.change-status').find('.dropdown-toggle').html(selText+'<span class="caret"></span>');
+                        });
                             
                             booksModel.changeStatus(bookId, status)
                                 .then(() => {
@@ -112,9 +117,9 @@ var booksController = function() {
 
                         $(document).ready(function() {
                             var readMoreHtml = $('.read-more').html();
-                            var lessText = readMoreHtml.substr(0, 800);
+                            var lessText = readMoreHtml.substr(0, 1350);
 
-                            if (readMoreHtml.length > 800) {
+                            if (readMoreHtml.length > 1350) {
                                 $('.read-more').html(lessText).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             } else {
                                 $('.read-more').html(readMoreHtml);
@@ -129,7 +134,7 @@ var booksController = function() {
 
                              $('body').on('click', '.show-less-link', function(event){
                                 event.preventDefault();                                 
-                                $(this).parent('.read-more').html(readMoreHtml.substr(0, 800)).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                                $(this).parent('.read-more').html(readMoreHtml.substr(0, 1350)).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             });
                         });
                     });

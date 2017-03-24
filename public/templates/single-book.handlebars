@@ -1,58 +1,98 @@
 <div>
-    <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#/">Home</a></li>
-    <li class="breadcrumb-item"><a href="#/books?page=1&size=10">Books</a></li>
-    <li class="breadcrumb-item active">Books</li>  
+    <ol class="breadcrumb hidden-sm-down">
+        <li class="breadcrumb-item"><a href="#/">Home</a></li>
+        <li class="breadcrumb-item"><a href="#/books?page=1&size=10">Books</a></li>
+        <li class="breadcrumb-item active">Books</li>  
     </ol>
 </div>
 
-<div class="header-all-books">
+<div class="header-all-books grad">
     <h2 id="title" data-id = {{_id}}>{{title}}</h2>
     <h4>By {{author}}</h4>
 </div>
 
 <div class="row">
 <main class="col-md-9">
+    <div class="book-post-info">
+        <p>Posted by <span>Admin</span> on March 13, 2011 | {{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</p>
+    </div>
     {{!--<div class="col-md-8">--}}
     <div>
         <div class="row">
-            <div class="media offset-md-1">
-            <img class="d-flex mr-3 img-fluid img-single-book" src="{{coverUrl}}">
-            <div class="media-body content col-md-6">
-                <p class="read-more">{{description}}</p>
-            </div>
+            <div class="">
+                <div class="media offset-md-1 container-book-info">
+                    <div class="container-media">
+                    <img class="img-fluid img-border" src="{{coverUrl}}">
+                    <div class="dropdown change-status">
+                        <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Change status<span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
+                            <button data-status="currently-reading" class="dropdown-item" type="button">Currently reading</button>
+                            <button data-status="read" class="dropdown-item" type="button">Read</button>
+                        </div>
+                    </div>
+                    </div>
+                
+                    <div class="media-body pt-0 content col-md-6">
+                        <p class="read-more">{{description}}</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <p>Genres: </p>
+        {{!--<p>Genres: </p>
             {{#genres}}
-                        <p>{{this}}  </p>
-            {{/genres}}
-        <p>Pages: {{pages}}</p>     
+                <p>{{this}}</p>
+            {{/genres}}--}}
+        {{!--<p>Pages: {{pages}}</p>     --}}
     </div>
-    <div class="change-status">
+    {{!--<div class="change-status">
         <h3>Status</h3>
         <button type="radio" data-status="want-to-read" class="btn btn-success btn-change-status">Want to read</button>
         <button type="radio" data-status="currently-reading" class="btn btn-success btn-change-status">Currently reading</button>
         <button type="radio" data-status="read" class=" btn btn-success btn-change-status">Read</button>
+    </div>--}}
+    {{!--<div class="row">--}}
+        <div class="container-reviews">
+            <h2>{{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</h2>
+                {{#if reviews}}
+                {{#reviews}}
+                {{!--<div class="row">--}}
+                <div class="media talk-bubble tri-right border btm-right-in grad">
+                        <img class="img-fluid img-review" src="./images/photo.jpg">
+                        <h4>{{this.username}}:</h4>
+                    <div class="media-body pt-0 mt-0">
+                        {{!--<div class="single-review">--}}
+                            
+                            <p class="talktext">{{this.review}}</p>
+                        {{!--</div>--}}
+                    </div>
+                </div>
+                {{!--</div>--}}
+                {{/reviews}}
+                {{else}}
+                    <p>Yours will be the first.</p>
+                {{/if}}
+            {{!--<div class="talk-bubble tri-right border btm-right-in">
+  <div class="talktext">
+    <p>Now flipped the other way and square. Uses .border and .btm-right-in</p>
+  </div>
+</div>--}}
+        </div>
+    {{!--</div>--}}
+    
+    <div class="container-new-review">
+        <h2>Leave a review</h2>
+        <div class="form-group">
+            <textarea rows="5" class="grad col-md-10" id="tb-review" type="text" class="form-control"></textarea>
+            <button class="btn-send-review" id="btn-review-send" class="">Send review</button>
+        </div>
     </div>
-    <div>
-        <h2>Reviews:</h2>
-        {{#if reviews}}
-        {{#reviews}}
-            <a href="#">{{this.username}}:</a>
-            <p>{{this.review}}</p>
-        {{/reviews}}
-        {{else}}
-            <p>Yours will be the first.</p>
-        {{/if}}
-    </div>
-    <div class="form-group">
-        <textarea id="tb-review" type="text" class="form-control"></textarea>
-        <button id="btn-review-send" class="btn btn-primary">Send</button>
-    </div>
+    
     {{!--</div>--}}
 </main>
-<aside class="col-md-3">
+<aside class="col-md-3 hidden-sm-down">
     <h5>Recently Added Books</h5>
         <ul class="reset-padding">
             <li><a href="#">Harry Potter</a></li>
