@@ -8,11 +8,19 @@
             <p class="container-book-author">Author: {{author}}</p>
         </div>
         <div>
-            <a href="#/books/{{_id}}"><img class="img-fluid img-size img-border" src="{{coverUrl}}"></a>
+            <a href="#/books/{{_id}}" data-toggle="tooltip" title="Book" data-placement="right" id="book-tooltip"><img class="img-fluid img-size img-border" src="{{coverUrl}}">
+             <div class="tooltip tooltip-right" role="tooltip">
+            {{!--<div class="tooltip-arrow"></div>--}}
+            {{!--<div class="tooltip-inner">
+                <img src="{{coverUrl}}">
+            </div>--}}
+        </div>
+        </a>
         </div>
         {{!--<div> 
             <h4>Pages: {{pages}}</h4>
         </div>--}}
+       
     </div>
     {{/books}}
 </div>

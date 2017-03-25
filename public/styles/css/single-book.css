@@ -120,9 +120,3 @@ aside {
   padding-right: 40px; }
 
 /* media queries */
-@media (min-width: 375px) and (max-width: 599px) {
-  .container-book-info {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center; } }

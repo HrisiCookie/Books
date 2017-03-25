@@ -101,26 +101,30 @@ var booksController = function() {
                             // console.log(status);
                             // console.log(bookId);
 
-                        $('.change-status').on('click', '.dropdown-item', function(){
+                        // $('.change-status').on('click', '.dropdown-item', function(){
                             var selText = $(this).text();
                             $(this).parents('.change-status').find('.dropdown-toggle').html(selText+'<span class="caret"></span>');
-                        });
+                        // });
                             
                             booksModel.changeStatus(bookId, status)
                                 .then(() => {
                                     notificator.success('Status changed!');
-                                    location.reload();
+                                    // location.reload();
                                 }, (err) => {
                                     notificator.error(err);
                                 });
                         });
 
                         $(document).ready(function() {
-                            var readMoreHtml = $('.read-more').html();
-                            var lessText = readMoreHtml.substr(0, 1350);
+                            let readMoreHtml = $('.read-more').html();
+                            let lessText = readMoreHtml.substr(0, 1350);
+                            let readMoreHtmlMobile = $('.mobile-read-more').html();
+                            let lessTextMobile = readMoreHtmlMobile.substr(0, 300);
+                            let readMoreHtmlMiddle = $('.middle-read-more').html();
+                            let lessTextMiddle = readMoreHtmlMiddle.substr(0, 700);
 
                             if (readMoreHtml.length > 1350) {
-                                $('.read-more').html(lessText).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                                $('.read-more').html(lessText).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             } else {
                                 $('.read-more').html(readMoreHtml);
                             }
@@ -134,7 +138,41 @@ var booksController = function() {
 
                              $('body').on('click', '.show-less-link', function(event){
                                 event.preventDefault();                                 
-                                $(this).parent('.read-more').html(readMoreHtml.substr(0, 1350)).append("<br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                                $(this).parent('.read-more').html(readMoreHtml.substr(0, 1350)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            });
+
+                            //mobile
+                            if (readMoreHtmlMobile.length > 300) {
+                                $('.mobile-read-more').html(lessTextMobile).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            } else {
+                                $('.mobile-read-more').html(readMoreHtmlMobile);
+                            }
+                        
+                            $('body').on('click', '.read-more-link', function(event){
+                                event.preventDefault();
+                                $(this).parent('.mobile-read-more').html(readMoreHtmlMobile).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
+                            });
+
+                             $('body').on('click', '.show-less-link', function(event){
+                                event.preventDefault();                                 
+                                $(this).parent('.mobile-read-more').html(readMoreHtmlMobile.substr(0, 300)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            });
+
+                            //middle
+                            if (readMoreHtmlMiddle.length > 700) {
+                                $('.middle-read-more').html(lessTextMiddle).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
+                            } else {
+                                $('.middle-read-more').html(readMoreHtmlMiddle);
+                            }
+                        
+                            $('body').on('click', '.read-more-link', function(event){
+                                event.preventDefault();
+                                $(this).parent('.middle-read-more').html(readMoreHtmlMiddle).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
+                            });
+
+                             $('body').on('click', '.show-less-link', function(event){
+                                event.preventDefault();                                 
+                                $(this).parent('.middle-read-more').html(readMoreHtmlMiddle.substr(0, 700)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             });
                         });
                     });

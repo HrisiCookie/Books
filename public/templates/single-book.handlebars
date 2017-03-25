@@ -57,7 +57,9 @@
         </div>
         <div class="col-md-8">
             {{#if description}}
-                <p class="read-more">{{description}}</p>
+                <p class="read-more hidden-md-down">{{description}}</p>
+                <p class="mobile-read-more hidden-sm-up">{{description}}</p>
+                <p class="middle-read-more hidden-sm-down hidden-md-up">{{description}}</p>                
                 {{else}}
                 <p>No description to this book.</p>
             {{/if}}

@@ -149,14 +149,27 @@ aside {
     padding-right: 40px;
 }
 
+
+
 /* media queries */
+@media screen and (max-width: 375px) {
+    // .mobile-read-more {
+    //     line-height: 1.5em;
+    //     height: 3em;
+    //     overflow: hidden;
+    //     white-space: normal;
+    //     text-overflow: ellipsis;
+    //     width: 100%;
+    // }
+}
+
 @media (min-width: 375px) and (max-width: 599px) {
-    .container-book-info {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-    }
+    // .container-book-info {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     flex-direction: column;
+    //     justify-content: center;
+    // }
 }
 
 @media (min-width: 425px) and (max-width: 599px) {
