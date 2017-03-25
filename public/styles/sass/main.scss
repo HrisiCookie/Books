@@ -133,6 +133,7 @@ a {
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 0;
+        background-color: white;
     }
 
     .navbar-logo {
@@ -149,6 +150,10 @@ a {
             background: $background-hoder;
         }
     }
+
+    .footer-mobile {
+        text-align: center;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 599px) {
@@ -157,6 +162,7 @@ a {
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 0;
+        background-color: white;
     }
 
     .navbar-logo {
@@ -173,6 +179,10 @@ a {
             background: $background-hoder;
         }
     }
+
+     .footer-mobile {
+        text-align: center;
+    }
 }
 
 @media (min-width: 425px) and (max-width: 599px) {
@@ -181,6 +191,10 @@ a {
         margin-bottom: 0;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .footer-mobile {
+        text-align: center;
     }
 }
 
@@ -230,4 +244,26 @@ a {
     background-color: $footer-color;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.footer-mobile {
+    text-align: center;
+    ul {
+        margin-left: 25%;
+        border: none;
+    }
+}
+
+
+
+#page .hidden-when-not-logged-in {
+    display: none;
+}
+
+#page.logged-in .hidden-when-not-logged-in {
+    display: initial;
+}
+
+#page.logged-in .visible-when-not-logged-in {
+    display: none;
 }

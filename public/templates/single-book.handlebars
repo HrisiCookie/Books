@@ -42,9 +42,9 @@
                 </div>
             </div>
         </div>--}}
-        <div class="col-md-4">
+        <div class="col-md-4 container-media">
             <img class="img-fluid img-border" src="{{coverUrl}}">
-            <div class="dropdown change-status">
+            <div class="dropdown change-status hidden-when-not-logged-in">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Change status<span class="caret"></span>
                 </button>
@@ -56,7 +56,11 @@
             </div>
         </div>
         <div class="col-md-8">
-            <p class="read-more">{{description}}</p>
+            {{#if description}}
+                <p class="read-more">{{description}}</p>
+                {{else}}
+                <p>No description to this book.</p>
+            {{/if}}
         </div>
     </div>
         {{!--<p>Genres: </p>
@@ -100,7 +104,7 @@
         </div>
     {{!--</div>--}}
     
-    <div class="container-new-review">
+    <div class="container-new-review hidden-when-not-logged-in">
         <h2>Leave a review</h2>
         <div class="form-group">
             <textarea rows="5" class="grad col-md-10" id="tb-review" type="text" class="form-control"></textarea>

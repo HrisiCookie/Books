@@ -107,23 +107,24 @@
                             <a class="nav-link" href="#/home">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#/login">Sign In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#/register">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#/books?page=1&size=10">Books</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#/add-new-book">Add new book</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#/logout">Sign Out</a>
-                        </li>
-                        <li class="nav-item">
+                        <li class="nav-item hidden-when-not-logged-in">
                             <a class="nav-link" href="#/mybooks">My books</a>
                         </li>
+                        <li class="nav-item hidden-when-not-logged-in">
+                            <a class="nav-link" href="#/add-new-book">Add new book</a>
+                        </li>
+                        <li class="nav-item visible-when-not-logged-in">
+                            <a class="nav-link" href="#/login">Sign In</a>
+                        </li>
+                        <li class="nav-item visible-when-not-logged-in">
+                            <a class="nav-link" href="#/register">Sign Up</a>
+                        </li>
+                        <li class="nav-item hidden-when-not-logged-in">
+                            <a class="nav-link" href="#/logout">Sign Out</a>
+                        </li>
+                       
                     </ul>
                 </div>
             </nav>
@@ -133,12 +134,12 @@
 
      <footer>
         <div class="footer">
-            <div class="row justify-content-xs-center offset-md-1">
+            <div class="row offset-md-1">
                 <div class="col-md-3 hidden-sm-down">
                     <a href="#/home"><img class="img-fluid" src="./images/logo.jpg"></a>
                     <p>Curabitur blandit rutrum pharetra. Donec dictum felis eu eros pretium vulputate. Etiam quis nulla ac turpis molestie tempus et in purus. Suspendisse potenti. Integer accumsan accumsan est, ac accumsan nunc sollicitudin id. </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 footer-mobile">
                     <h5>Recently Added Books</h5>
                     <ul class="reset-padding">
                         <li><a href="#">Harry Potter</a></li>
@@ -153,7 +154,7 @@
                     <h5>Text Widget</h5>
                     <p>Curabitur blandit rutrum pharetra. Donec dictum felis eu eros pretium vulputate. Etiam quis nulla ac turpis molestie tempus et in purus. Suspendisse potenti. Integer accumsan accumsan est, ac accumsan nunc sollicitudin id. </p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 footer-mobile">
                     <h5>Recent Reviews</h5>
                     <ul class="reset-padding">
                         <li><a href="#">Harry Potter</a></li>
@@ -164,6 +165,48 @@
                         <li><a href="#">Harry Potter</a></li>
                     </ul>
                 </div>
+                <!-- footer for mobile -->
+                <!--<div class="dropdown hidden-sm-up">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recently Added Books
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                    </div>
+                </div>
+                <div class="dropdown hidden-sm-up">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Recent Reviews
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                        <a class="dropdown-item" href="#">Harry Potter</a>
+                    </div>
+                </div>-->
+                <!--<div class="dropdown hidden-sm-up col-sm-12 footer-mobile">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#/home">Recently Added Books<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="#/blog/Avalanche makers"><span>Avalanche makers</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Left alone"><span>Left alone</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Starter pack"><span>Starter pack</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/New Year's Eve"><span>New Year's Eve</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Ski or Snowboard"><span>Ski or Snowboard</span></a></li>
+                        </ul>
+                </div>
+                <div class="dropdown hidden-sm-up col-sm-12 footer-mobile">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#/home">Recent Post<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="#/blog/Avalanche makers"><span>Avalanche makers</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Left alone"><span>Left alone</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Starter pack"><span>Starter pack</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/New Year's Eve"><span>New Year's Eve</span></a></li>
+                            <li class="dropdown-item"><a href="#/blog/Ski or Snowboard"><span>Ski or Snowboard</span></a></li>
+                        </ul>
+                </div>-->
+                <!-- footer for mobile -->
             </div>
         </div>
     </footer>

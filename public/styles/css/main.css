@@ -86,7 +86,8 @@ a {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    background-color: white; }
   .navbar-logo {
     width: 30%;
     margin: 0 auto;
@@ -94,14 +95,17 @@ a {
   .nav-link {
     text-align: center; }
     .nav-link:active {
-      background: #efefef; } }
+      background: #efefef; }
+  .footer-mobile {
+    text-align: center; } }
 
 @media (min-width: 375px) and (max-width: 599px) {
   #page {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
-    margin-right: 0; }
+    margin-right: 0;
+    background-color: white; }
   .navbar-logo {
     width: 10%;
     margin: 0 auto;
@@ -109,14 +113,18 @@ a {
   .nav-link {
     text-align: center; }
     .nav-link:active {
-      background: #efefef; } }
+      background: #efefef; }
+  .footer-mobile {
+    text-align: center; } }
 
 @media (min-width: 425px) and (max-width: 599px) {
   #page {
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 0;
-    margin-right: 0; } }
+    margin-right: 0; }
+  .footer-mobile {
+    text-align: center; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
   #page {
@@ -149,3 +157,18 @@ a {
   background-color: #f9f9f9;
   padding-top: 30px;
   padding-bottom: 30px; }
+
+.footer-mobile {
+  text-align: center; }
+  .footer-mobile ul {
+    margin-left: 25%;
+    border: none; }
+
+#page .hidden-when-not-logged-in {
+  display: none; }
+
+#page.logged-in .hidden-when-not-logged-in {
+  display: initial; }
+
+#page.logged-in .visible-when-not-logged-in {
+  display: none; }

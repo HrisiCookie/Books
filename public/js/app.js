@@ -24,4 +24,14 @@
     $(function() {
         sammyApp.run('#/');
     });
+
+    usersController.isUserLoggedIn()
+        .then((isLoggedIn) => {
+            if (isLoggedIn) {
+                $('#page').addClass('logged-in');
+            } else {
+                $('#page').removeClass('logged-in');
+            }
+        })
+        .then();
 }());

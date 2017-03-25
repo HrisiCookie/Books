@@ -38,10 +38,12 @@ var usersController = function() {
                     
                     userModel.login(user)
                         .then((res) => {
+                            $('#page').addClass('logged-in');
                             notificator.success(`${res.username} signed in!`);
                             console.log('User logged in!');
                             $('#tb-username').val('');
                             $('#tb-password').val('');
+                            context.redirect('#/home');
                         }, 
                         function (err) {
                             notificator.error('Invalid username or password!');
@@ -53,14 +55,21 @@ var usersController = function() {
     function logout(context) {
         userModel.logout()
             .then(() => {
+                $('#page').removeClass('logged-in');
                 notificator.success('User signed out!');
-                console.log('User logged out!')
+                console.log('User logged out!');
+                context.redirect('#/home');
             });
+    }
+
+    function isUserLoggedIn() {
+        return userModel.isLoggedIn();
     }
 
     return {
         register: register,
         login: login,
-        logout: logout
+        logout: logout,
+        isUserLoggedIn: isUserLoggedIn
     };
 }();
