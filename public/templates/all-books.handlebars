@@ -4,11 +4,11 @@
     {{#books}}
     <div class="container-book">
         <div class="container-title">
-            <a class="container-book-title" href="#/books/{{_id}}"><h3>{{{title}}}</h3></a>
-            <a class="container-book-author" href="#"><h4>Author: {{author}}</h4></a>
+            <a class="" href="#/books/{{_id}}"><h4 class="container-book-title">{{{title}}}</h4></a>
+            <p class="container-book-author">Author: {{author}}</p>
         </div>
         <div>
-            <img class="img-size" src="{{coverUrl}}">
+            <a href="#/books/{{_id}}"><img class="img-fluid img-size img-border" src="{{coverUrl}}"></a>
         </div>
         {{!--<div> 
             <h4>Pages: {{pages}}</h4>
