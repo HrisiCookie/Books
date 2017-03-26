@@ -107,6 +107,11 @@ a {
     text-align: center; }
     .nav-link:active {
       background: #efefef; }
+  .nav-search input {
+    padding: 0; }
+  .social-icons {
+    margin: 5px;
+    margin-top: 0; }
   .footer-mobile {
     text-align: center; } }
 
@@ -125,6 +130,11 @@ a {
     text-align: center; }
     .nav-link:active {
       background: #efefef; }
+  .nav-search input {
+    padding: 0; }
+  .social-icons {
+    margin: 5px;
+    margin-top: 0; }
   .footer-mobile {
     text-align: center; } }
 
@@ -148,7 +158,10 @@ a {
   .nav-link {
     text-align: center; }
     .nav-link:active {
-      background: #efefef; } }
+      background: #efefef; }
+  .footer {
+    margin: 0;
+    padding: 20px; } }
 
 @media (min-width: 992px) and (max-width: 1024px) {
   #page {

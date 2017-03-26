@@ -41,10 +41,11 @@
         {{#ifCond status "currently-reading"}}
         <div class="display-column text-overflow margin-right">
             <div class="display-column">
-                    <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
+                    <p class="text-top">
+                        <a href="#/books/{{_id}}" class="title"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
-                    <p>Pages: {{pages}}</p>
+                    <p>Pages: {{pages}}</p></p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

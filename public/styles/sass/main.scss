@@ -163,6 +163,17 @@ a {
         }
     }
 
+    .nav-search {
+        input {
+            padding: 0;
+        }
+    }
+
+    .social-icons {
+        margin: 5px;
+        margin-top: 0;
+    }
+
     .footer-mobile {
         text-align: center;
     }
@@ -190,6 +201,17 @@ a {
         &:active {
             background: $background-hoder;
         }
+    }
+
+    .nav-search {
+        input {
+            padding: 0;
+        }
+    }
+
+    .social-icons {
+        margin: 5px;
+        margin-top: 0;
     }
 
      .footer-mobile {
@@ -231,6 +253,11 @@ a {
         &:active {
             background: $background-hoder;
         }
+    }
+
+    .footer {
+        margin: 0;
+        padding: 20px;
     }
 }
 

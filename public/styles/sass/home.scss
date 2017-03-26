@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'my-books';
 
 // $home-header-border: #f4f4f4;
 // $home-header-color: #929292;
@@ -57,13 +58,22 @@
 }
 
 .img-main {
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 150px;
 }
 
+.display-horizontal-home {
+    @extend .display-horizontal;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
 .display-column-home {
-    float: left;
+    @extend .display-column;
+    // float: left;
     width: 300px;
+    p {
+        margin-top: 20px;
+    }
 }
 
 /* media queries */
@@ -72,11 +82,39 @@
     .carousel-inner img {
         max-height: $carusel-img-height / 2;
     }
+
+    .display-column-home {
+        width: 200px;
+        margin-bottom: 30px;
+    }
+
+    .img-main {
+        width: 200px;
+        height: 100px;
+    }
+
+    h4, h5 {
+        font-size: 1.3em;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 599px) {
     .carousel-inner img {
         max-height: $carusel-img-height / 2;
+    }
+
+    .display-column-home {
+        width: 250px;
+        margin-bottom: 40px;
+    }
+
+    .img-main {
+        width: 250px;
+        height: 125px;
+    }
+
+    h4, h5 {
+        font-size: 1.6em;
     }
 }
 
@@ -85,19 +123,21 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-
-}
-
-@media (max-width: 1199px) {
-
+    .display-column-home {
+        margin-bottom: 50px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1024px) {
     #next {
-    position: absolute;
-    top: $carusel-img-height / 2 - 30;
-    margin-left: 96.3%;
-}
+        position: absolute;
+        top: $carusel-img-height / 2 - 30;
+        margin-left: 96.3%;
+    }
+
+    .display-column-home {
+        margin-bottom: 50px;
+    }
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
@@ -110,8 +150,56 @@
 
 @media (min-width: 1441px) and (max-width: 2560px) {
      #next {
-    position: absolute;
-    top: $carusel-img-height / 2 - 30;
-    margin-left: 98.5%;
+        position: absolute;
+        top: $carusel-img-height / 2 - 30;
+        margin-left: 98.5%;
+    }
 }
+
+@media (min-width: 2560px) {
+    .carousel-caption {
+        margin-left: $carusel-img-height * 2.7;
+        margin-bottom: $carusel-img-height / 10;
+        width: 700px;
+        height: 450px;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+        max-height: $carusel-img-height * 2;
+    }
+
+    #prev {
+        top: 300px;
+    }
+
+     #next {
+        top: 300px;
+    }
+
+    .display-column-home {
+        width: 600px;
+        margin-bottom: 80px;
+    }
+
+    .img-main {
+        width: 600px;
+        height: 300px;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    h5 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.5em;
+    }
+    
+    a, p, .nav-item {
+        font-size: 2em;
+    }
 }
