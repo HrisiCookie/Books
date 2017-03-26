@@ -25,9 +25,7 @@
         sammyApp.run('#/');
     });
 
-    $(function () {
-        $('#book-tooltip').tooltip();
-    });
+   
 
     usersController.isUserLoggedIn()
         .then((isLoggedIn) => {

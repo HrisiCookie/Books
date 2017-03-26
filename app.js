@@ -43,7 +43,7 @@ app.use('/', function(req, res, next) {
 });
 
 app.get('/api/book-pages', function(req, res) {
-    var size = req.query.size || 10;
+    var size = req.query.size || 12;
     Book.find({}, function(err, books) {
         if (err) {
             res.status(404).send(err);

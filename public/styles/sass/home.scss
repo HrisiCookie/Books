@@ -9,6 +9,15 @@
     max-height: $carusel-img-height;
 }
 
+.carousel-caption {
+    background-color: black;
+    opacity: 0.6;
+    margin-left: $carusel-img-height * 1.2;
+    margin-bottom: $carusel-img-height / 15;
+    width: 500px;
+    height: 300px;
+    // float: right;
+}
 // @media (min-width: 576px) and (max-width: 767px) { 
 //     .carousel-inner img {
 //         width: 100%;

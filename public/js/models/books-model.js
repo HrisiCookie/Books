@@ -35,6 +35,20 @@ class BooksModel {
         return promise;
     }
 
+    getBookPages(){
+        let url = "api/book-pages";
+        let promise = new Promise((resolve, reject) => {
+            requester.get(url)
+                .then(function(result){
+                    resolve(result.pages);
+                }, function(err) {
+                    reject(err);
+                });
+        });
+
+        return promise;
+    }
+
     addReview(bookId, review) {
         let promise = new Promise((resolve, reject) => {
             let url = 'api/mybooks/review';

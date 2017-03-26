@@ -22,6 +22,20 @@ var routes = function (Book, Update) {
     });
   });
 
+  bookRouter.route("/count", function (req, res) {
+    var size = +req.query.size || 12;
+    Book.find(function (err, result) {
+      if (err) {
+        return res.status(400)
+          .send(err);
+      }
+
+      return {
+        pageSize: size,
+        pagesCount: parseInt(result.length / size) + 1
+      };
+    });
+  });
   bookRouter.route('/:bookId')
     .get(function (req, res) {
       var returnBook = req.book.toJSON();

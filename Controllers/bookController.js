@@ -55,7 +55,7 @@
     var get = function (req, res) {
       var query = {},
         page = req.query.page || 1,
-        size = req.query.size || 10;
+        size = req.query.size || 12;
 
       var validParams = ['author'];
       validParams.forEach(function (name) {

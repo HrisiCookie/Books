@@ -22,39 +22,52 @@
 
 // let bookController = new BookController();
 
-var booksController = function() {
+var booksController = function () {
     const DEFAULT_BOOK_COVER_URL = 'http://www.jameshmayfield.com/wp-content/uploads/2015/03/defbookcover-min.jpg';
 
-   function getBooks(context) {
-       booksModel.getBooks(context.params)
-        .then((books) => {
-            let coveredBooks = books.map((book) => {
-                let coverAsNumber = parseInt(book.coverUrl);
-                if (!book.coverUrl) {
-                    book.coverUrl = DEFAULT_BOOK_COVER_URL;
+    function getBooks(context) {
+        var data;
+
+        booksModel.getBooks(context.params)
+            .then((books) => {
+                let coveredBooks = books.map((book) => {
+                    let coverAsNumber = parseInt(book.coverUrl);
+                    if (!book.coverUrl) {
+                        book.coverUrl = DEFAULT_BOOK_COVER_URL;
+                    }
+
+                    return book;
+                });
+                let currPage = +context.params.page;
+                let firstPage = currPage === 1;
+                let lastPage = books.length < context.params.size;
+                let prevPage = firstPage ? currPage : currPage - 1;
+                let nextPage = lastPage ? currPage : currPage + 1;
+                data = {
+                    books,
+                    page: currPage,
+                    firstPage,
+                    lastPage,
+                    prevPage,
+                    nextPage
+                };
+                return booksModel.getBookPages();
+            })
+            .then(function (pagesCount) {
+                var pages = [];
+                for (let i = 0; i < pagesCount; i++) {
+                    pages.push({
+                        number: i + 1,
+                        link: `#/books?page=${i + 1}&size=12`
+                    });
                 }
 
-                return book;
-            });
-            let currPage = +context.params.page;
-            let firstPage = currPage === 1;
-            let lastPage = books.length < context.params.size;
-            let prevPage = firstPage ? currPage : currPage - 1;
-            let nextPage = lastPage ? currPage : currPage + 1;
-            let data = {
-                books,
-                page: currPage,
-                firstPage,
-                lastPage,
-                prevPage,
-                nextPage
-            };
-
-            templates.get('all-books')
-            .then(function(template) {
+                data.pages = pages;
+                return templates.get('all-books');
+            })
+            .then(function (template) {
                 context.$element().html(template(data));
             });
-        });
     }
 
     function getSingleBook(context) {
@@ -76,12 +89,12 @@ var booksController = function() {
 
                 return book;
 
-                }).then(function(book) {
+            }).then(function (book) {
                 templates.get('single-book')
-                    .then(function(template) {
+                    .then(function (template) {
                         context.$element().html(template(book));
 
-                        $('#btn-review-send').on('click', function() {
+                        $('#btn-review-send').on('click', function () {
                             let bookId = $('#title').attr('data-id');
                             let review = $('#tb-review').val();
 
@@ -94,18 +107,18 @@ var booksController = function() {
                                 });
                         });
 
-                        $('.change-status').on('click', '.dropdown-item', function() {
+                        $('.change-status').on('click', '.dropdown-item', function () {
                             let status = $(this).attr('data-status');
                             let bookId = $('#title').attr('data-id');
 
                             // console.log(status);
                             // console.log(bookId);
 
-                        // $('.change-status').on('click', '.dropdown-item', function(){
+                            // $('.change-status').on('click', '.dropdown-item', function(){
                             var selText = $(this).text();
-                            $(this).parents('.change-status').find('.dropdown-toggle').html(selText+'<span class="caret"></span>');
-                        // });
-                            
+                            $(this).parents('.change-status').find('.dropdown-toggle').html(selText + '<span class="caret"></span>');
+                            // });
+
                             booksModel.changeStatus(bookId, status)
                                 .then(() => {
                                     notificator.success('Status changed!');
@@ -115,7 +128,7 @@ var booksController = function() {
                                 });
                         });
 
-                        $(document).ready(function() {
+                        $(document).ready(function () {
                             let readMoreHtml = $('.read-more').html();
                             let lessText = readMoreHtml.substr(0, 1350);
                             let readMoreHtmlMobile = $('.mobile-read-more').html();
@@ -128,16 +141,16 @@ var booksController = function() {
                             } else {
                                 $('.read-more').html(readMoreHtml);
                             }
-                            
+
                             console.log('here');
 
-                            $('body').on('click', '.read-more-link', function(event){
+                            $('body').on('click', '.read-more-link', function (event) {
                                 event.preventDefault();
                                 $(this).parent('.read-more').html(readMoreHtml).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
                             });
 
-                             $('body').on('click', '.show-less-link', function(event){
-                                event.preventDefault();                                 
+                            $('body').on('click', '.show-less-link', function (event) {
+                                event.preventDefault();
                                 $(this).parent('.read-more').html(readMoreHtml.substr(0, 1350)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             });
 
@@ -147,14 +160,14 @@ var booksController = function() {
                             } else {
                                 $('.mobile-read-more').html(readMoreHtmlMobile);
                             }
-                        
-                            $('body').on('click', '.read-more-link', function(event){
+
+                            $('body').on('click', '.read-more-link', function (event) {
                                 event.preventDefault();
                                 $(this).parent('.mobile-read-more').html(readMoreHtmlMobile).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
                             });
 
-                             $('body').on('click', '.show-less-link', function(event){
-                                event.preventDefault();                                 
+                            $('body').on('click', '.show-less-link', function (event) {
+                                event.preventDefault();
                                 $(this).parent('.mobile-read-more').html(readMoreHtmlMobile.substr(0, 300)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             });
 
@@ -164,27 +177,27 @@ var booksController = function() {
                             } else {
                                 $('.middle-read-more').html(readMoreHtmlMiddle);
                             }
-                        
-                            $('body').on('click', '.read-more-link', function(event){
+
+                            $('body').on('click', '.read-more-link', function (event) {
                                 event.preventDefault();
                                 $(this).parent('.middle-read-more').html(readMoreHtmlMiddle).append("<br/><button class='btn-read-more-less show-less-link'>Show less</button>");
                             });
 
-                             $('body').on('click', '.show-less-link', function(event){
-                                event.preventDefault();                                 
+                            $('body').on('click', '.show-less-link', function (event) {
+                                event.preventDefault();
                                 $(this).parent('.middle-read-more').html(readMoreHtmlMiddle.substr(0, 700)).append("<span>...</span><br/><button class='btn-read-more-less read-more-link'>Show more</button>");
                             });
                         });
                     });
-                });
+            });
 
 
 
-            // });
-    }   
+        // });
+    }
 
     function myBooks(context) {
-         booksModel.getMyBooks()
+        booksModel.getMyBooks()
             .then((books) => {
                 let coveredBooks = books.map((book) => {
                     let coverAsNumber = parseInt(book.coverUrl);
@@ -193,25 +206,25 @@ var booksController = function() {
                     }
 
                     return book;
+                });
+
+                let data = {
+                    books
+                };
+
+                templates.get('my-books')
+                    .then(function (template) {
+                        context.$element().html(template(data));
                     });
-
-                    let data = {
-                        books
-                    };
-
-                    templates.get('my-books')
-                        .then(function(template) {
-                            context.$element().html(template(data));
-                        });
             });
     }
 
     function newBook(context) {
         templates.get('add-new-book')
-            .then(function(template) {
+            .then(function (template) {
                 context.$element().html(template());
 
-                $('#btn-add-book').on('click', function() {
+                $('#btn-add-book').on('click', function () {
                     let title = $('#tb-title').val();
                     let author = $('#tb-author').val();
                     let description = $('#tb-description').val();
@@ -253,4 +266,4 @@ var booksController = function() {
         myBooks: myBooks,
         newBook: newBook
     }
-}();
+} ();

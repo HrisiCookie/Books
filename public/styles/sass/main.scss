@@ -124,6 +124,12 @@ a {
     padding: 15px;
 }
 
+.pages {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 /* media queries */
 
 @media screen and (max-width: 320px) {
