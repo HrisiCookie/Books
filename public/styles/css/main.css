@@ -17,7 +17,13 @@ body {
   .nav-search input {
     background-color: #f4f4f4;
     font-style: italic;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 2px solid white;
+    border-left: 2px solid lightgrey transparent;
+    border-bottom: 2px solid grey transparent; }
 
 .inner-addon {
   position: relative; }

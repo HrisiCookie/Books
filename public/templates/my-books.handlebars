@@ -14,7 +14,7 @@
         {{#ifCond status "want-to-read"}}
         <div class="display-column text-overflow margin-right">
             <div class="display-column">
-                    <a href="#/books/{{_id}}"><h4 class="container-book-title">{{{title}}}</h4></a>
+                    <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
                     <p>Pages: {{pages}}</p>
@@ -41,7 +41,7 @@
         {{#ifCond status "currently-reading"}}
         <div class="display-column text-overflow margin-right">
             <div class="display-column">
-                    <a href="#/books/{{_id}}"><h4 class="container-book-title">{{{title}}}</h4></a>
+                    <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
                     <p>Pages: {{pages}}</p>
@@ -68,7 +68,7 @@
         {{#ifCond status "read"}}
         <div class="display-column text-overflow margin-right">
             <div class="display-column">
-                    <a href="#/books/{{_id}}"><h4 class="container-book-title">{{{title}}}</h4></a>
+                    <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
                     <p>Pages: {{pages}}</p>

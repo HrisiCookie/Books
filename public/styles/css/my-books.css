@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start; }
+  justify-content: center; }
 
 .margin-right {
   margin-right: 20px; }
@@ -14,7 +14,11 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  vertical-align: top; }
+
+.text-top {
+  vertical-align: text-top; }
 
 .category {
   margin-left: 30px;
