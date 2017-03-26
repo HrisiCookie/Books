@@ -30,17 +30,25 @@
     justify-content: center;
 }
 
+.text-overflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    // width: 25%;
+}
+
 .container-book {
+    @extend .text-overflow;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    // width: 25%;
     // justify-content: center;
     margin-bottom: 70px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // overflow: hidden;
 }
 
 .img-size {

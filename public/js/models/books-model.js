@@ -151,6 +151,51 @@ class BooksModel {
         return promise;
     }
 
+    getMyBooksWantToRead() {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/mybooks/to-read';
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.getJSON(url, options)
+                })
+                .then(resolve, reject);
+        });
+
+        return promise;
+    }
+
+    getMyBooksCurrentlyReadting() {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/mybooks/currently-reading';
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.getJSON(url, options)
+                })
+                .then(resolve, reject);
+        });
+
+        return promise;
+    }
+
+    getMyBooksRead() {
+        let promise = new Promise((resolve, reject) => {
+            let url = 'api/mybooks/read';
+
+            userModel.getLoggedHeader()
+                .then((headers) => {
+                    let options = {headers};
+                    return requester.getJSON(url, options)
+                })
+                .then(resolve, reject);
+        });
+
+        return promise;
+    }
+
     addNewBook(bookToAdd) {
         let promise = new Promise((resolve, reject) => {
             let url = 'api/books';

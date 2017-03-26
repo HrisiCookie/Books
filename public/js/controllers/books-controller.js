@@ -219,6 +219,30 @@ var booksController = function () {
             });
     }
 
+    function myBooksWantToRead(context) {
+        booksModel.getMyBooksWantToRead()
+            .then((booksWantToRead) => {
+                let coveredBooks = booksWantToRead.map((book) => {
+                    let coverAsNumber = parseInt(book.coverUrl);
+                    if (!book.coverUrl) {
+                        book.coverUrl = DEFAULT_BOOK_COVER_URL;
+                    }
+
+                    return book;
+                });
+
+                let data = {
+                    booksWantToRead
+                };
+
+                template.get('my-books')
+                    .then(function (template) {
+                        context.$element().html(template(data))
+                    });
+                
+            });
+    }
+
     function newBook(context) {
         templates.get('add-new-book')
             .then(function (template) {
