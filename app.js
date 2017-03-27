@@ -8,7 +8,6 @@ var express = require('express'),
 mongoose.Promise = global.Promise;
 var db = mongoose.connect('mongodb://team:123456@ds059692.mongolab.com:59692/bookapi');
 
-
 var Book = require('./models/bookModel');
 var User = require('./models/userModel');
 var Update = require('./models/updateModel');
@@ -92,4 +91,4 @@ app.listen(port, function() {
     console.log(`Server is running at http://localhost:${port}`);
 });
 
-module.exports = app;
+// module.exports = app;
