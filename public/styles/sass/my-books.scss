@@ -33,6 +33,12 @@
     // vertical-align: top;
 }
 
+.display-column-mb {
+    @extend .display-column;
+    margin-top: 0;
+    // vertical-align: top;
+}
+
 .img-header {
     width: 150px;
     height: 100px;

@@ -1,7 +1,7 @@
 /* variables */
 /* mixins */
 .bg {
-  background-image: url("../images/bg2.jpg");
+  background-image: url("/images/bg2.jpg");
   width: 100%; }
 
 .container-form {
@@ -13,24 +13,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 25%;
-  margin-top: 15%;
-  margin-bottom: 25%; }
+  margin-top: 10%;
+  margin-bottom: 15%; }
   .register-form h1 {
+    font-size: 3em;
     text-align: center;
-    text-transform: uppercase;
-    padding: 5px 0;
-    border-bottom: 3px solid blue;
-    font-weight: bold;
-    position: relative;
-    margin-bottom: 8px; }
-    .register-form h1:after {
-      content: '';
-      border-bottom: 3px solid blue;
-      width: 100%;
-      position: absolute;
-      bottom: -6px;
-      left: 0; }
+    margin-bottom: 10%; }
 
 .input-group-addon {
   background-color: #75a0aa;
