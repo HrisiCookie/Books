@@ -2,7 +2,7 @@
     <ol class="breadcrumb hidden-sm-down">
         <li class="breadcrumb-item"><a href="#/">Home</a></li>
         <li class="breadcrumb-item"><a href="#/books?page=1&size=10">Books</a></li>
-        <li class="breadcrumb-item active">{{title}}</li>  
+        <li class="breadcrumb-item active">{{{title}}}</li>  
     </ol>
 </div>
 
@@ -12,13 +12,13 @@
 </div>
 
 <div class="row">
-<main class="col-md-9">
+<main class="col-md-9 col-lg-10">
     <div class="book-post-info">
         <p>Posted by <span>Admin</span> on March 13, 2011 | {{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</p>
     </div>
     {{!--<div class="col-md-8">--}}
     <div class="row">
-    <div class="container-book-info">
+    <div class="display-horizontal container-book-info">
         {{!--<div class="row">
             <div class="">
                 <div class="media offset-md-1 container-book-info">
@@ -42,8 +42,8 @@
                 </div>
             </div>
         </div>--}}
-        <div class=" display-column col-md-4">
-            <img class="img-fluid img-border" src="{{coverUrl}}">
+        <div class="display-column col-md-4">
+            <img class="img-fluid img-border img-size" src="{{coverUrl}}">
             <p>{{author}}</p>
             <fieldset class="rating">
                 <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -98,11 +98,10 @@
                 {{#reviews}}
                 {{!--<div class="row">--}}
                 <div class="media talk-bubble tri-right border btm-right-in grad">
-                        <img class="img-fluid img-review" src="./images/photo.jpg">
-                        <h4>{{this.username}}:</h4>
-                    <div class="media-body pt-0 mt-0">
+                        <img class="media-object pull-left img-fluid img-border img-review" src="./images/photo.jpg">
+                    <div class="media-body mt-0">
                         {{!--<div class="single-review">--}}
-                            
+                            <h4 class="media-heading">{{this.username}}:</h4>
                             <p class="talktext">{{this.review}}</p>
                         {{!--</div>--}}
                     </div>
@@ -112,25 +111,27 @@
                 {{else}}
                     <p>Yours will be the first.</p>
                 {{/if}}
-            {{!--<div class="talk-bubble tri-right border btm-right-in">
-  <div class="talktext">
-    <p>Now flipped the other way and square. Uses .border and .btm-right-in</p>
-  </div>
-</div>--}}
+        </div>
+        <div class="container-new-review">
+            <h2>Leave a review</h2>
+            <div class="form-group">
+                <textarea rows="5" class="grad col-md-10 form-control" id="tb-review" type="text"></textarea>
+                <button class="btn-send-review" id="btn-review-send">Send review</button>
+            </div>
         </div>
     {{!--</div>--}}
     
-    <div class="container-new-review hidden-when-not-logged-in">
+    {{!--<div class="container-new-review hidden-when-not-logged-in">
         <h2>Leave a review</h2>
         <div class="form-group">
             <textarea rows="5" class="grad col-md-10" id="tb-review" type="text" class="form-control"></textarea>
             <button class="btn-send-review" id="btn-review-send" class="">Send review</button>
         </div>
-    </div>
+    </div>--}}
     
     {{!--</div>--}}
 </main>
-<aside class="col-md-3 hidden-sm-down">
+<aside class="col-md-3 col-lg-2 hidden-sm-down">
     <h5>Recently Added Books</h5>
         <ul class="reset-padding">
             <li><a href="#">Harry Potter</a></li>
