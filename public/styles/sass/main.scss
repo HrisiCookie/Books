@@ -140,6 +140,10 @@ a {
 /* media queries */
 
 @media screen and (max-width: 320px) {
+    body {
+        margin: 0 !important;
+    }
+
     #page {
         width: 100%;
         margin-top: 0;
@@ -148,7 +152,7 @@ a {
         margin-right: 0;
         background-color: white;
     }
-
+    
     .navbar-logo {
         width: 30%;
         // height: 50%;
@@ -181,6 +185,10 @@ a {
 }
 
 @media (min-width: 375px) and (max-width: 599px) {
+    body {
+        margin: 0 !important;
+    }
+
     #page {
         margin-top: 0;
         margin-bottom: 0;
@@ -221,6 +229,10 @@ a {
 }
 
 @media (min-width: 425px) and (max-width: 599px) {
+    body {
+        margin: 0 !important;
+    }
+    
     #page {
         margin-top: 0;
         margin-bottom: 0;
