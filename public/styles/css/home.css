@@ -42,6 +42,12 @@
   margin-bottom: 26.66667px;
   width: 500px;
   height: 300px; }
+  .carousel-caption button {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    float: right;
+    margin-top: 170px; }
 
 .text-center {
   text-align: center; }
@@ -55,7 +61,7 @@
   padding-bottom: 30px;
   border-top: 2px solid #f4f4f4;
   border-bottom: 2px solid #f4f4f4; }
-  .home-header h4 {
+  .home-header h5 {
     color: #929292; }
 
 #prev {
@@ -116,19 +122,32 @@
     top: 170px;
     margin-left: 96.3%; }
   .display-column-home {
-    margin-bottom: 50px; } }
+    margin-bottom: 50px; }
+  .carousel-caption {
+    margin-left: 350px;
+    width: 350px;
+    height: 250px; } }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
   #next {
     position: absolute;
     top: 170px;
-    margin-left: 97.3%; } }
+    margin-left: 97.3%; }
+  .carousel-caption {
+    margin-left: 520px;
+    width: 500px;
+    height: 250px; } }
 
 @media (min-width: 1441px) and (max-width: 2560px) {
   #next {
     position: absolute;
     top: 170px;
-    margin-left: 98.5%; } }
+    margin-left: 98.5%; }
+  .carousel-caption {
+    margin-left: 1080px;
+    margin-bottom: 40px;
+    width: 500px;
+    height: 250px; } }
 
 @media (min-width: 2560px) {
   .carousel-caption {

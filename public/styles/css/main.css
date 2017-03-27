@@ -2,7 +2,7 @@
 /* mixins */
 body {
   background-color: #f4f4f4;
-  color: #ababab; }
+  color: #929292; }
 
 #page {
   background-color: #ffffff;
@@ -72,7 +72,7 @@ h1, h2, h5, h4, .nav-item {
   color: black; }
 
 a {
-  color: #ababab; }
+  color: #929292; }
   a:hover {
     color: #75a0aa;
     text-decoration: none; }
