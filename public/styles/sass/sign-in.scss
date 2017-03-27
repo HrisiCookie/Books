@@ -1,5 +1,10 @@
 @import 'colors';
 
+.bg {
+    background-image: url('../images/bg2.jpg');
+    width: 100%;
+}
+
 .container-form {
     display: flex;
     justify-content: center;
