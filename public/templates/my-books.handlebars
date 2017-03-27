@@ -13,10 +13,10 @@
     {{#each books}}
         {{#ifCond status "want-to-read"}}
         <div class="display-column text-overflow margin-right ml-4 mr-2">
-            <div class="display-column">
+            <div class="">
                     <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
-                    <p>Author: {{author}}</p>
+                    <p class="text-center">Author: {{author}}</p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,16 +34,15 @@
     </div>
     </section>
     <section class="">
-    <h1 class="category grad"><img src="./images/currently-reading.png" class="img-fluid img-header"/>Currently reading books</h1>
+    <h1 class="category grad"><img src="./images/currently-reading.png" class="img-fluid img-header"/><span class="text-center">Currently reading books</span></h1>
      <div class="display-horizontal-mybooks">
     {{#each books}}
         {{#ifCond status "currently-reading"}}
         <div class="display-column text-overflow margin-right ml-4 mr-2">
-            <div class="display-column">
-                    <p class="text-top">
-                        <a href="#/books/{{_id}}" class="title"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
+            <div class="">
+                    <a href="#/books/{{_id}}" class="title"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
-                    <p>Author: {{author}}</p>
+                    <p class="text-center">Author: {{author}}</p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,10 +65,10 @@
     {{#each books}}
         {{#ifCond status "read"}}
         <div class="display-column text-overflow margin-right ml-4 mr-2">
-            <div class="display-column">
+            <div class="">
                     <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
-                    <p>Author: {{author}}</p>
+                    <p class="text-center">Author: {{author}}</p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -87,7 +86,7 @@
     </div>
     </section>
 </main>
-<aside class="col-md-3 hidden-sm-down">
+<aside class="col-md-3 hidden-md-down">
     <h5>Recently Added Books</h5>
         <ul class="reset-padding">
             <li><a href="#">Harry Potter</a></li>

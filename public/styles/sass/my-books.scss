@@ -1,5 +1,6 @@
 @import 'colors';
 
+
 // .my-books {
 //     display: flex;
 //     flex-direction: row;
@@ -16,6 +17,7 @@
 .display-horizontal-mybooks {
     @extend .display-horizontal;
     justify-content: flex-start;
+    margin-bottom: 50px;
 }
 
 // .margin-right {
@@ -45,8 +47,77 @@
 
 .category {
     margin-left: 30px;
+    // margin-bottom: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     border-top: 2px solid  $home-header-border;
     border-bottom: 2px solid $home-header-border;
+}
+
+/* media queries */
+@media screen and (max-width: 320px) {
+    .img-header {
+        width: 90px;
+        height: 70px;
+        margin-left: -20px;
+    }
+
+    .display-column {
+        margin-bottom: 50px;
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+    }
+
+}
+
+@media (min-width: 375px) and (max-width: 599px) {
+
+}
+
+@media (min-width: 425px) and (max-width: 599px) {
+    .img-header {
+        width: 90px;
+        height: 70px;
+        margin-left: -20px;
+    }
+
+    .display-column {
+        margin-bottom: 50px;
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .img-header {
+        width: 90px;
+        height: 70px;
+        margin-left: -20px;
+    }
+
+    .display-column {
+        // width: 50%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+
+}
+
+@media (min-width: 2560px) {
+
 }
