@@ -90,7 +90,8 @@
   border-radius: 5px;
   padding: 8px 12px 8px 12px;
   outline: 0;
-  box-shadow: 0; }
+  box-shadow: 0;
+  border-style: solid; }
 
 .btn-read-more-less, .btn-send-review {
   float: right; }
