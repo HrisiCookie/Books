@@ -87,7 +87,7 @@ app.get('/api/genres', function(req, res) {
 });
 
 app.listen(port, function() {
-    require("openurl").open(`http://localhost:${port}/index.html`);
+    // require("openurl").open(`http://localhost:${port}/index.html`);
     console.log(`Server is running at http://localhost:${port}`);
 });
 
