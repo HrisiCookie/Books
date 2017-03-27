@@ -12,7 +12,7 @@
   justify-content: flex-start;
   margin-bottom: 50px; }
 
-.display-column, .display-column-mb {
+.display-column, .display-column-mb, .display-column-sb {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -49,9 +49,9 @@
     width: 90px;
     height: 70px;
     margin-left: -20px; }
-  .display-column, .display-column-mb {
+  .display-column, .display-column-mb, .display-column-sb {
     margin-bottom: 50px; }
-    .display-column p, .display-column-mb p {
+    .display-column p, .display-column-mb p, .display-column-sb p {
       padding-top: 10px;
       padding-bottom: 10px;
       margin: 0; } }
@@ -65,9 +65,9 @@
     width: 90px;
     height: 70px;
     margin-left: -20px; }
-  .display-column, .display-column-mb {
+  .display-column, .display-column-mb, .display-column-sb {
     margin-bottom: 50px; }
-    .display-column p, .display-column-mb p {
+    .display-column p, .display-column-mb p, .display-column-sb p {
       padding-top: 10px;
       padding-bottom: 10px;
       margin: 0; } }
@@ -141,7 +141,8 @@ aside {
 .container-reviews, .container-new-review {
   margin-top: 60px;
   margin-bottom: 30px;
-  margin-left: 60px; }
+  margin-left: 60px;
+  padding: 0 30px; }
 
 .grad {
   background: #f9f9f9;
@@ -200,6 +201,10 @@ aside {
 .container-book-info {
   margin-left: 60px;
   padding-right: 40px; }
+
+.display-column-sb {
+  margin-top: 0;
+  padding-left: 0; }
 
 /* rating */
 fieldset, label {
@@ -271,6 +276,18 @@ h1 {
     margin-right: 30px; }
   .btn-send-review {
     margin-top: 20px; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .display-horizontal, .display-horizontal-mybooks {
+    justify-content: flex-start; }
+  .display-column-sb {
+    margin-top: 0; }
+  .container-book-info {
+    margin-left: 0; }
+  .container-reviews, .container-new-review {
+    margin-left: 15px; }
+  .change-status {
+    width: 100%; } }
 
 @media (min-width: 1025px) and (max-width: 1440px) {
   p {

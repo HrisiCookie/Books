@@ -55,6 +55,7 @@ body {
   margin-right: 15px; }
   .social-icons a {
     margin-right: 5px;
+    text-decoration: none;
     color: #e3e3e3; }
     .social-icons a:hover {
       color: #75a0aa; }

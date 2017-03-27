@@ -12,13 +12,13 @@
 </div>
 
 <div class="row">
-<main class="col-md-9 col-lg-10">
+<main class="col-md-12 col-lg-10">
     <div class="book-post-info">
         <p>Posted by <span>Admin</span> on March 13, 2011 | {{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</p>
     </div>
     {{!--<div class="col-md-8">--}}
-    <div class="row">
-    <div class="display-horizontal container-book-info">
+    <div class="row col-md-12">
+    <div class="display-horizontal container-book-info col-md-12">
         {{!--<div class="row">
             <div class="">
                 <div class="media offset-md-1 container-book-info">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>--}}
-        <div class="display-column-mb col-md-4">
+        <div class="display-column-sb col-md-4">
             <img class="img-fluid img-border img-size" src="{{coverUrl}}">
             <p>{{author}}</p>
             <fieldset class="rating">
@@ -73,7 +73,7 @@
             {{#if description}}
                 <p class="read-more hidden-md-down">{{description}}</p>
                 <p class="mobile-read-more hidden-sm-up">{{description}}</p>
-                <p class="middle-read-more hidden-sm-down hidden-md-up">{{description}}</p>                
+                <p class="middle-read-more hidden-sm-down hidden-lg-up">{{description}}</p>                
                 {{else}}
                 <p>No description to this book.</p>
             {{/if}}
@@ -131,7 +131,7 @@
     
     {{!--</div>--}}
 </main>
-<aside class="col-md-3 col-lg-2 hidden-sm-down">
+<aside class="col-md-3 col-lg-2 hidden-md-down">
     <h5>Recently Added Books</h5>
         <ul class="reset-padding">
             <li><a href="#">Harry Potter</a></li>
