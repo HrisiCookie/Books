@@ -2,11 +2,14 @@
 /* mixins */
 /* variables */
 /* mixins */
-.display-horizontal {
+.display-horizontal, .display-horizontal-mybooks {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center; }
+
+.display-horizontal-mybooks {
+  justify-content: flex-start; }
 
 .margin-right {
   margin-right: 20px; }
@@ -17,6 +20,10 @@
   justify-content: center;
   align-items: center;
   vertical-align: top; }
+
+.img-header {
+  width: 150px;
+  height: 100px; }
 
 .text-top {
   vertical-align: text-top; }

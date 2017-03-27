@@ -6,18 +6,17 @@
     </ol>
 </div>
 <div class="row">
-<main class="col-md-9">
+<main class="col-md-9 mb-5">
     <section class="">
-    <h1 class="category">Want to read books</h1>
-    <div class="display-horizontal">
+    <h1 class="category grad"><img src="./images/want-to-read.png" class="img-fluid img-header"/>Want to read books</h1>
+    <div class="display-horizontal-mybooks">
     {{#each books}}
         {{#ifCond status "want-to-read"}}
-        <div class="display-column text-overflow margin-right">
+        <div class="display-column text-overflow margin-right ml-4 mr-2">
             <div class="display-column">
                     <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
-                    <p>Pages: {{pages}}</p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,17 +34,16 @@
     </div>
     </section>
     <section class="">
-    <h1 class="category">Currently reading books</h1>
-     <div class="display-horizontal">
+    <h1 class="category grad"><img src="./images/currently-reading.png" class="img-fluid img-header"/>Currently reading books</h1>
+     <div class="display-horizontal-mybooks">
     {{#each books}}
         {{#ifCond status "currently-reading"}}
-        <div class="display-column text-overflow margin-right">
+        <div class="display-column text-overflow margin-right ml-4 mr-2">
             <div class="display-column">
                     <p class="text-top">
                         <a href="#/books/{{_id}}" class="title"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
-                    <p>Pages: {{pages}}</p></p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,16 +61,15 @@
     </div>
     </section>
     <section class="">
-    <h1 class="category">Read books</h1>
-     <div class="display-horizontal">
+    <h1 class="category grad">Read books</h1>
+     <div class="display-horizontal-mybooks">
     {{#each books}}
         {{#ifCond status "read"}}
-        <div class="display-column text-overflow margin-right">
+        <div class="display-column text-overflow margin-right ml-4 mr-2">
             <div class="display-column">
                     <a href="#/books/{{_id}}"><h4 class="container-book-title text-top">{{{title}}}</h4></a>
                     <a href="#/books/{{_id}}"><img class="img-fluid img-border img-size" src="{{coverUrl}}"></a>
                     <p>Author: {{author}}</p>
-                    <p>Pages: {{pages}}</p>
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

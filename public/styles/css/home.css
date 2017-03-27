@@ -2,11 +2,14 @@
 /* mixins */
 /* variables */
 /* mixins */
-.display-horizontal, .display-horizontal-home {
+.display-horizontal, .display-horizontal-mybooks, .display-horizontal-home {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center; }
+
+.display-horizontal-mybooks {
+  justify-content: flex-start; }
 
 .margin-right {
   margin-right: 20px; }
@@ -17,6 +20,10 @@
   justify-content: center;
   align-items: center;
   vertical-align: top; }
+
+.img-header {
+  width: 150px;
+  height: 100px; }
 
 .text-top {
   vertical-align: text-top; }
@@ -41,7 +48,11 @@
   margin-left: 480px;
   margin-bottom: 26.66667px;
   width: 500px;
-  height: 300px; }
+  height: 300px;
+  float: right; }
+  .carousel-caption h3 {
+    font-family: 'Kreon', serif;
+    color: white; }
   .carousel-caption button {
     background-color: black;
     border: 1px solid black;
@@ -142,12 +153,7 @@
   #next {
     position: absolute;
     top: 170px;
-    margin-left: 98.5%; }
-  .carousel-caption {
-    margin-left: 1080px;
-    margin-bottom: 40px;
-    width: 500px;
-    height: 250px; } }
+    margin-left: 98.5%; } }
 
 @media (min-width: 2560px) {
   .carousel-caption {
