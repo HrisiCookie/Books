@@ -180,7 +180,9 @@ a {
     }
 
     .footer-mobile {
-        text-align: center;
+        // h5, ul {
+        //     text-align: center;
+        // }
     }
 }
 
@@ -224,7 +226,7 @@ a {
     }
 
      .footer-mobile {
-        text-align: center;
+        // text-align: center;
     }
 }
 
@@ -241,11 +243,14 @@ a {
     }
 
     .footer-mobile {
-        text-align: center;
+        // text-align: center;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    body {
+        margin: 0 !important;
+    }
      #page {
         margin-top: 0;
         margin-bottom: 0;
@@ -299,7 +304,7 @@ a {
 }
 
 .footer-mobile {
-    text-align: center;
+    h5 {text-align: center;}
     ul {
         margin-left: 25%;
         border: none;
