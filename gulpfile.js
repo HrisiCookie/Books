@@ -42,10 +42,15 @@ gulp.task('compile:js', () => {
         .pipe(gulp.dest('build'));
 });
 
+var concatCss = require('gulp-concat-css');
+var cleanCSS = require('gulp-clean-css');
+
 gulp.task('sass', () => {
     return gulp.src(['public/styles/sass/**/*.scss', '!public/libs/**/*'])
         .pipe(sass())
-        .pipe(gulp.dest('public/styles/css'))
+        .pipe(concatCss("bundle.css"))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('public/styles/css/'))
 });
 
 gulp.task('watch', () => {

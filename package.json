@@ -37,11 +37,14 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat-css": "^2.3.0",
     "gulp-eslint": "^3.0.1",
     "gulp-sass": "^3.1.0",
     "gulp-sync": "^0.1.4",
     "gulp-watch-sass": "^1.0.3"
-  }, "engines": {
+  },
+  "engines": {
     "node": "5.6.0"
   }
 }
