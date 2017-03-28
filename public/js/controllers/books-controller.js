@@ -1,27 +1,3 @@
-// const DEFAULT_BOOK_COVER_URL = 'http://www.jameshmayfield.com/wp-content/uploads/2015/03/defbookcover-min.jpg';
-// const VERY_BIG_NUMBER_FOR_BOOKS_COUNT_FOR_OUR_SMALL_PROJECT = 1000000000;
-
-// class BookController {
-//     getBooks(context) {
-//         booksModel.getBooks(context.params)
-//             .then((books) => {
-//                 let coveredBooks = books.map((book) => {
-//                     let coverAsNumber = parseInt(book.coverUrl);
-//                     if (!book.cover) {
-//                         book.coverUrl = DEFAULT_BOOK_COVER_URL;
-//                     }
-
-//                     return templates.get('all-books');
-//                 })
-//                 .then(function(template) {
-//                     context.$element().html(template());
-//                 });
-//             });
-//     }      
-// }
-
-// let bookController = new BookController();
-
 var booksController = function () {
     const DEFAULT_BOOK_COVER_URL = 'http://www.jameshmayfield.com/wp-content/uploads/2015/03/defbookcover-min.jpg';
 
@@ -32,7 +8,7 @@ var booksController = function () {
             .then((books) => {
                 let coveredBooks = books.map((book) => {
                     let coverAsNumber = parseInt(book.coverUrl);
-                    if (!book.coverUrl) {
+                    if (!book.coverUrl || !isNaN(coverAsNumber  )) {
                         book.coverUrl = DEFAULT_BOOK_COVER_URL;
                     }
 
@@ -76,14 +52,6 @@ var booksController = function () {
         booksModel.getSingleBook(context.params.id)
             .then((resBook) => {
                 let reviews = resBook.reviews;
-
-                // reviews = reviews.map((review) => {
-                //     let nickName;
-                //     userModel.getNickNameByID(review.userId)
-                //         .then((resNickName) => {
-                //             nickName = resNickName;
-                //             review.nickName = nickName;
-                //         });
 
                 book = resBook;
 
@@ -201,7 +169,7 @@ var booksController = function () {
             .then((books) => {
                 let coveredBooks = books.map((book) => {
                     let coverAsNumber = parseInt(book.coverUrl);
-                    if (!book.coverUrl) {
+                    if (!book.coverUrl || !isNaN(coverAsNumber)) {
                         book.coverUrl = DEFAULT_BOOK_COVER_URL;
                     }
 
@@ -224,7 +192,7 @@ var booksController = function () {
             .then((booksWantToRead) => {
                 let coveredBooks = booksWantToRead.map((book) => {
                     let coverAsNumber = parseInt(book.coverUrl);
-                    if (!book.coverUrl) {
+                    if (!book.coverUrl || !isNaN(coverAsNumber)) {
                         book.coverUrl = DEFAULT_BOOK_COVER_URL;
                     }
 

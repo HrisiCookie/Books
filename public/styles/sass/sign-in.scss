@@ -36,7 +36,7 @@
     flex-direction: column;
     justify-content: center;
     // margin-left: 25%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 15%;
 
     h1 {
@@ -73,6 +73,28 @@
     }
 }
 
-.input-group input, #btn-login {
+.input-group input, #btn-login, #btn-register {
     border-radius: 50px;
+}
+
+#btn-login, #btn-register {
+    margin-top: 10%;
+    background-color: $link-color-hover;
+    border: 1px solid black;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+// @media screen and (max-width: 320px) {
+//     .register-form {
+//         margin-top: 20%;
+//         margin-bottom: 40%;
+//     }
+// }
+
+@media (min-width: 320px) and (max-width: 426px) {
+    .register-form {
+        margin-top: 20%;
+        margin-bottom: 40%;
+    }
 }
