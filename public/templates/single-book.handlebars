@@ -19,29 +19,6 @@
     {{!--<div class="col-md-8">--}}
     <div class="row col-md-12">
     <div class="display-horizontal container-book-info col-md-12">
-        {{!--<div class="row">
-            <div class="">
-                <div class="media offset-md-1 container-book-info">
-                    <div class="container-media">
-                    <img class="img-fluid img-border" src="{{coverUrl}}">
-                    <div class="dropdown change-status">
-                        <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Change status<span class="caret"></span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
-                            <button data-status="currently-reading" class="dropdown-item" type="button">Currently reading</button>
-                            <button data-status="read" class="dropdown-item" type="button">Read</button>
-                        </div>
-                    </div>
-                    </div>
-                
-                    <div class="media-body pt-0 content col-md-6">
-                        <p class="read-more">{{description}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>--}}
         <div class="display-column-sb col-md-4">
             <img class="img-fluid img-border img-size" src="{{coverUrl}}">
             <p>{{author}}</p>
@@ -93,28 +70,24 @@
     </div>--}}
     {{!--<div class="row">--}}
         <div class="container-reviews">
-            <h2>{{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</h2>
+            <h2 class="mb-5">{{#reviews}}{{../reviews.length}}{{/reviews}} Reviews</h2>
                 {{#if reviews}}
                 {{#reviews}}
-                {{!--<div class="row">--}}
                 <div class="media talk-bubble tri-right border btm-right-in grad">
                         <img class="media-object pull-left img-fluid img-border img-review" src="./images/photo.jpg">
                     <div class="media-body mt-0">
-                        {{!--<div class="single-review">--}}
                             <h4 class="media-heading">{{this.username}}:</h4>
                             <p class="talktext">{{this.review}}</p>
-                        {{!--</div>--}}
                     </div>
                 </div>
-                {{!--</div>--}}
                 {{/reviews}}
                 {{else}}
                     <p>Yours will be the first.</p>
                 {{/if}}
         </div>
-        <div class="container-new-review">
-            <h2>Write a review</h2>
-            <div class="form-group">
+        <div class="container-new-review hidden-when-not-logged-in">
+            <h2 class="container-new-review">Write a review</h2>
+            <div class="form-group container-new-review">
                 <textarea rows="5" class="grad col-md-10 form-control" id="tb-review" type="text"></textarea>
                 <button class="btn-send-review" id="btn-review-send">Send review</button>
             </div>

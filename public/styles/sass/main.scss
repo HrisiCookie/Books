@@ -1,4 +1,5 @@
 @import 'colors';
+// @import 'my-books';
 
 // $primary-color: #f4f4f4;
 // $page-color: #ffffff;
@@ -301,6 +302,8 @@ a {
     background-color: $footer-color;
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .footer-mobile {
