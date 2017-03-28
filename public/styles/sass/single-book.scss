@@ -55,11 +55,13 @@
 .btn-change-status {
     @extend .btn-def;
     // margin-left: 50px;
-    // background-color: $social-icons-color-hover;
+    background-color: $btn-color-change-status;
+    color: white;
     width: 100%;
-    &:hover {
-        background-color: $social-icons-color-hover;
-    }
+    border: 1px solid $btn-color-border-change-status;
+    // &:hover {
+        // background-color: $social-icons-color-hover;
+    // }
 }
 
 .btn-send-review {

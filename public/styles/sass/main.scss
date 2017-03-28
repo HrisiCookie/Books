@@ -75,7 +75,7 @@ a.nav-link {
     color: rgba(0, 0, 0, 1) !important;
     font-size: 1.3em;
     &:focus {
-        color: blue !important;
+        color: $link-color-hover !important;
     }
 }
 
