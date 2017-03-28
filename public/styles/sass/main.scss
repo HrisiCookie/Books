@@ -71,6 +71,14 @@ body {
     text-transform: uppercase;
 }
 
+a.nav-link {
+    color: rgba(0, 0, 0, 1) !important;
+    font-size: 1.3em;
+    &:focus {
+        color: blue !important;
+    }
+}
+
 .navbar-logo {
     margin-top: 20px;
     margin-left: 20px;
@@ -126,10 +134,6 @@ a {
     &:active {
         color: $social-icons-color-hover;
     }
-}
-
-.nav-link {
-    font-size: 1.3em;
 }
 
 .reset-padding {
