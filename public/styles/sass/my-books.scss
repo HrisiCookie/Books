@@ -39,7 +39,7 @@
 }
 
 .img-header {
-    width: 150px;
+    width: 130px;
     height: 100px;
 }
 
@@ -58,6 +58,7 @@
     padding-bottom: 30px;
     border-top: 2px solid  $home-header-border;
     border-bottom: 2px solid $home-header-border;
+    font-size: 2em;
 }
 
 .aside-mb {
@@ -80,11 +81,23 @@
         }
     }
 
+    .category {
+        text-align: center;
+    }
+
+    .container-book-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 599px) {
     .display-horizontal-mybooks {
         justify-content: center;
+    }
+
+    .category {
+        text-align: center;
     }
 }
 
@@ -114,6 +127,10 @@
 
     .display-horizontal-mybooks {
        justify-content: center;
+    }
+
+    .category {
+        text-align: center;
     }
 }
 

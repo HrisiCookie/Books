@@ -20,7 +20,7 @@
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{status}}<span class="caret"></span>
+                    Want to read<span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
@@ -46,7 +46,7 @@
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{status}}<span class="caret"></span>
+                    Currently reading<span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
@@ -60,7 +60,7 @@
     </div>
     </section>
     <section class="">
-    <h1 class="category grad">Read books</h1>
+    <h1 class="category grad"><img src="./images/read.png" class="img-fluid img-header"/><span class="text-center">Read books</span></h1>
      <div class="display-horizontal-mybooks">
     {{#each books}}
         {{#ifCond status "read"}}
@@ -72,7 +72,7 @@
             </div>
              <div class="dropdown change-status">
                 <button class="btn btn-secondary btn-change-status dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   {{status}}<span class="caret"></span>
+                   Read<span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button data-status="want-to-read" class="dropdown-item" type="button">Want to read</button>
