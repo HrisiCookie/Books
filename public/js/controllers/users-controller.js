@@ -18,6 +18,7 @@ var usersController = function() {
                             console.log('User registred!');
                             $('#tb-username').val('');
                             $('#tb-password').val('');
+                            context.redirect('#/home');
                         }, (err) => {
                             notificator.error(JSON.parse(err).err);
                         });
