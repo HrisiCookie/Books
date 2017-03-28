@@ -17,6 +17,10 @@ body {
     color: $body-text-color;
 }
 
+.texture {
+    background-image: url('/images/background.png');
+}
+
 #page {
     background-color: $page-color;
     margin-top: 50px;
