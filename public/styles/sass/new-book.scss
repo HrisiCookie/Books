@@ -1,3 +1,5 @@
+@import 'colors';
+
 .form-group {
     h4 {
         float: left;
@@ -14,4 +16,9 @@
 .btn-add {
     float: right;
     margin-top: 20px;
+    background-color: $btn-color-change-status;
+    border: 1px solid $btn-color-border-change-status;
+    color: white;
+    font-size: 1.3em;
+    padding: 10px 20px 10px 20px;
 }

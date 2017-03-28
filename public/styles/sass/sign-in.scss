@@ -65,7 +65,7 @@
 }
 
 .input-group-addon {
-    background-color: $link-color-hover;
+    background-color: $btn-color-change-status;
     color: white;
     border-radius: 50px;
     &:hover {
@@ -78,9 +78,10 @@
 }
 
 #btn-login, #btn-register {
+    color: white;
     margin-top: 10%;
-    background-color: $link-color-hover;
-    border: 1px solid black;
+    background-color: $btn-color-change-status;
+    border: 1px solid $btn-color-border-change-status;
     font-size: 1.3em;
     text-transform: uppercase;
 }
